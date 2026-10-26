@@ -243,7 +243,7 @@ section.s { padding: clamp(72px, 10vw, 128px) 0; }
 .visual .buddy { position: absolute; z-index: 3; left: 5%; bottom: 5%; width: 26%; }
 @media (max-width: 600px) {
   .pol { width: 31%; padding: 5px 5px 0; border-radius: 8px; }
-  .pol figcaption { font-size: 10.5px; gap: 4px; padding: 6px 0 7px; }
+  .pol figcaption { font-size: 11.5px; gap: 4px; padding: 6px 0 7px; }
   .pol figcaption .ico { width: 13px; height: 13px; }
 }
 @media (max-width: 860px) {
@@ -284,8 +284,8 @@ section.s { padding: clamp(72px, 10vw, 128px) 0; }
   .life li { border-radius: 18px; }
   .life .proof { left: 8px; right: 8px; bottom: 8px; padding: 7px 9px 7px 7px; gap: 7px; border-radius: 12px; }
   .life .proof .ico { width: 20px; height: 20px; padding: 4px; }
-  .life .proof b { font-size: 12.5px; }
-  .life .proof small { font-size: 11px; }
+  .life .proof b { font-size: 13.5px; }
+  .life .proof small { font-size: 12px; }
 }
 
 /* privacy */
@@ -325,6 +325,88 @@ footer ul a { text-decoration: none; font-weight: 500; color: var(--ink-2); }
 footer ul a:hover { color: var(--ink); }
 footer .tagline { margin-top: 12px; color: var(--ink-2); font-weight: 400; line-height: 1.6; max-width: 22em; }
 footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
+
+/* phones: one reading column. Section intros line up left with the rows below them, cards turn into
+   compact rows (picture or icon on the left) so the page is shorter, and nothing drops below 12px. */
+@media (max-width: 640px) {
+  body { font-size: 16px; line-height: 1.65; }
+  section.s { padding: 64px 0; }
+
+  .nav .wrap { height: 60px; }
+  .logo { font-size: 18px; gap: 9px; }
+  .logo img { width: 34px; height: 34px; border-radius: 9px; }
+  .btn { height: 40px; padding: 0 16px; font-size: 14.5px; }
+
+  .hero .lead { font-size: 16px; margin-top: 14px; }
+
+  .facts ul { display: grid; justify-content: center; padding: 20px 0; gap: 10px; }   /* one column, icons lined up */
+  .facts li { font-size: 14.5px; }
+  .facts .ico { width: 20px; height: 20px; }
+
+  .head { text-align: left; margin-bottom: 32px; }
+  .head h2, .row h2, .band h2, .feed h2 { font-size: 1.75rem; line-height: 1.2; }
+  .head p { margin: 12px 0 0; font-size: 16px; }
+  .head .tag, .row .tag { margin-bottom: 16px; }
+  .tag { font-size: 13px; padding: 6px 12px 6px 9px; }
+  .tag .ico { width: 16px; height: 16px; }
+
+  .feed { border-radius: 24px; }
+  .feed .txt { padding: 26px 22px 28px; }
+  .feed .time { font-size: 13px; }
+  .feed h2 { margin-top: 10px; }
+  .feed p { margin-top: 14px; font-size: 16px; line-height: 1.7; }
+  .feed ol { margin-top: 22px; gap: 8px; }
+
+  .steps { gap: 12px; }
+  .step { display: grid; grid-template-columns: 92px 1fr; column-gap: 16px; align-items: start;
+          padding: 14px 16px 18px 14px; border-radius: 22px; }
+  .step .art { grid-row: 1 / span 2; aspect-ratio: 1; border-radius: 16px; }
+  .step .art img { width: 78%; }
+  .step h3 { font-size: 18px; margin: 4px 0 0; gap: 9px; }
+  .step h3::before { width: 24px; height: 24px; font-size: 13px; }
+  .step p { margin: 6px 0 0; font-size: 15px; line-height: 1.6; }
+
+  .band .wrap { gap: 28px; }
+  .band .vis { padding-top: 10vw; }
+  .band .ph { --pw: min(54vw, 250px); }
+  .band h2 { margin-top: 16px; }
+  .band .lead { margin-top: 14px; font-size: 16px; line-height: 1.7; }
+  .feats { gap: 10px; margin-top: 28px; }
+  .feat { display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; padding: 16px; border-radius: 18px; }
+  .feat .ic { grid-row: 1 / span 2; }
+  .feat h3 { margin-top: 1px; font-size: 16px; }
+  .feat p { margin-top: 4px; font-size: 14.5px; line-height: 1.55; }
+
+  .row { gap: 28px; }
+  .row + .row { margin-top: 72px; }
+  .row .lead { margin-top: 14px; font-size: 16px; line-height: 1.7; }
+  .visual { border-radius: 24px; }
+  .ticks { margin-top: 22px; gap: 12px; }
+  .ticks li { font-size: 15.5px; }
+
+  .tool .shot { border-radius: 20px; }
+  .tool h3 { font-size: 18px; margin-top: 18px; }
+  .tool p { margin-top: 6px; }
+
+  .private { flex-direction: row; align-items: flex-start; text-align: left; gap: 16px; padding: 22px 20px; border-radius: 24px; }
+  .private img { width: 76px; }
+  .private h2 { font-size: 1.35rem; }
+  .private p { margin-top: 8px; font-size: 15.5px; line-height: 1.65; }
+
+  .faq { gap: 10px; }
+  .faq details { border-radius: 18px; }
+  .faq summary { padding: 18px 20px; font-size: 16.5px; }
+  .faq details p { padding: 0 20px 20px; font-size: 15.5px; line-height: 1.7; }
+
+  .end { padding-top: 56px; }
+  .end img.buddy { width: 150px; margin-bottom: 22px; }
+  .end h2 { font-size: 2rem; }
+  .end p { font-size: 16px; margin-top: 14px; }
+  .end .store { margin-top: 26px; }
+
+  footer .top { gap: 28px; }
+  footer .cols { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 24px; width: 100%; }
+}
 
 /* gentle reveal, only when JS runs and motion is fine */
 @media (prefers-reduced-motion: no-preference) {
