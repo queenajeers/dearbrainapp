@@ -134,11 +134,11 @@ p { margin: 0; text-wrap: pretty; }
 /* --cw is the centre phone's width. It is capped by the screen height so that about 63% of the phone
    (height = 2.04 x width) is on screen at first load: cw <= (screen height - space above the phones) x .78.
    --top is that space above the phones (header + text + button) at each layout. */
-.hero-phones { --top: 360px; --cw: clamp(190px, min(22vw, calc((100vh - var(--top)) * .75)), 300px);
+.hero-phones { --top: 360px; --cw: clamp(170px, min(19vw, calc((100vh - var(--top)) * .75)), 280px);
                position: relative; display: flex; justify-content: center; align-items: flex-start; gap: calc(var(--cw) * .1);
-               height: calc(var(--cw) * 1.76); margin-top: clamp(24px, 3.6vh, 44px); }
+               margin-top: clamp(24px, 3.6vh, 44px); padding-bottom: clamp(40px, 6vw, 72px); }
 @supports (height: 100svh) {
-  .hero-phones { --cw: clamp(190px, min(22vw, calc((100svh - var(--top)) * .75)), 300px); }
+  .hero-phones { --cw: clamp(170px, min(19vw, calc((100svh - var(--top)) * .75)), 280px); }
 }
 .hero-phones::before { /* one crisp peach circle behind the phones, like the screenshots' sun */
   content: ""; position: absolute; z-index: 0; left: 50%; top: calc(var(--cw) * -.22); width: calc(var(--cw) * 3.3); aspect-ratio: 1;
@@ -148,8 +148,8 @@ p { margin: 0; text-wrap: pretty; }
 .hero-phones .f { --pw: calc(var(--cw) * .76); margin-top: calc(var(--cw) * .34); z-index: 1; }
 @media (max-width: 1080px) { .hero-phones .f { display: none; } .hero-phones { --cw: clamp(190px, min(30vw, calc((100vh - var(--top)) * .75)), 300px); } }
 @media (max-width: 640px) {
-  .hero-phones { --top: 380px; --cw: clamp(170px, min(54vw, calc((100vh - var(--top)) * .75)), 250px); gap: 0; }
-  @supports (height: 100svh) { .hero-phones { --cw: clamp(170px, min(54vw, calc((100svh - var(--top)) * .75)), 250px); } }
+  .hero-phones { --top: 380px; --cw: clamp(140px, min(42vw, calc((100vh - var(--top)) * .75)), 250px); gap: 0; }
+  @supports (height: 100svh) { .hero-phones { --cw: clamp(140px, min(42vw, calc((100svh - var(--top)) * .75)), 250px); } }
   .hero-phones .n { --pw: calc(var(--cw) * .78); margin-top: calc(var(--cw) * .26); }
   .hero-phones .n:nth-child(2) { margin-right: calc(var(--cw) * -.22); }
   .hero-phones .n:nth-child(4) { margin-left: calc(var(--cw) * -.22); }
@@ -175,7 +175,8 @@ section.s { padding: clamp(72px, 10vw, 128px) 0; }
 .feed h2 { font-size: clamp(1.8rem, 3.8vw, 2.8rem); margin-top: 16px; }
 .feed p { margin-top: 20px; color: #D6D9EE; font-size: clamp(16px, 1.5vw, 17.5px); line-height: 1.75; max-width: 32em; }
 .feed ol { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; list-style: none; margin: 28px 0 0; padding: 0; }
-.feed ol li { padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,.08); font-size: 14px; font-weight: 600; }
+.feed ol li { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px 9px 12px; border-radius: 999px; background: rgba(255,255,255,.08); font-size: 14.5px; font-weight: 600; }
+.feed ol .em { font-size: 18px; line-height: 1; font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif; }
 .feed ol li.x { background: rgba(230, 52, 30, .2); color: #FFB3A6; }
 .feed ol .ar { padding: 0; background: none; color: #6E77A8; }
 .feed .ar .ico { width: 18px; height: 18px; display: block; }
@@ -214,7 +215,7 @@ section.s { padding: clamp(72px, 10vw, 128px) 0; }
 .band .ph img { filter: drop-shadow(0 40px 60px rgba(0,0,0,.45)); }
 @media (max-width: 960px) {
   .band .wrap { grid-template-columns: 1fr; }
-  .band .vis { order: -1; height: 112vw; max-height: 620px; overflow: hidden; padding-top: 8vw; }
+  .band .vis { order: -1; padding-top: 8vw; }
   .band .ph { --pw: min(58vw, 300px); }
 }
 @media (max-width: 520px) { .feats { grid-template-columns: 1fr; } }
@@ -227,11 +228,11 @@ section.s { padding: clamp(72px, 10vw, 128px) 0; }
 .ticks { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 14px; }
 .ticks li { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; line-height: 1.55; }
 .ticks .ico { width: 22px; height: 22px; padding: 4px; border-radius: 50%; background: var(--mint); color: #fff; stroke-width: 3; margin-top: 1px; }
-.visual { position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 1 / 1.04;
-          display: flex; justify-content: center; align-items: flex-start; padding-top: 10%; }
+.visual { position: relative; border-radius: var(--r-lg); overflow: hidden;
+          display: flex; justify-content: center; align-items: flex-start; padding: 12% 0 10%; }
 .visual.sky { background: var(--sky-100); }
 .visual.peach { background: var(--peach-100); }
-.visual .ph { --pw: 50%; z-index: 2; }
+.visual .ph { --pw: 46%; z-index: 2; }
 .pol { position: absolute; z-index: 3; margin: 0; width: 27%; background: #fff; padding: 7px 7px 0; border-radius: 10px;
        box-shadow: 0 18px 36px -12px rgba(43,29,26,.35); }
 .pol img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 5px; }
@@ -252,8 +253,8 @@ section.s { padding: clamp(72px, 10vw, 128px) 0; }
 
 /* toolkit cards: a carousel on phones, a grid on desktop */
 .tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; list-style: none; margin: 0; padding: 0; }
-.tool .shot { position: relative; aspect-ratio: 1 / 1.08; border-radius: 24px; overflow: hidden; display: flex; justify-content: center; padding-top: 12%; }
-.tool .shot .ph { --pw: 62%; }
+.tool .shot { position: relative; border-radius: 24px; overflow: hidden; display: flex; justify-content: center; padding: 14% 0 12%; }
+.tool .shot .ph { --pw: 54%; }
 .tool .shot .ph img { filter: drop-shadow(0 18px 26px rgba(43,29,26,.16)); }
 .tool:nth-child(1) .shot { background: var(--peach-100); }
 .tool:nth-child(2) .shot { background: var(--sky-100); }
@@ -402,9 +403,9 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
         <h2>It’s not you. It’s the feed.</h2>
         <p>Feeds are built to keep you scrolling. One quick check turns into an hour, and the habit you planned quietly slips away.</p>
         <ol aria-label="The scroll loop">
-          <li>Open it for one thing</li><li class="ar" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></li>
-          <li>An hour is gone</li><li class="ar" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></li>
-          <li class="x">Habit skipped, again</li>
+          <li><span class="em" aria-hidden="true">📱</span>Open it for one thing</li><li class="ar" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></li>
+          <li><span class="em" aria-hidden="true">⏳</span>An hour is gone</li><li class="ar" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></li>
+          <li class="x"><span class="em" aria-hidden="true">😩</span>Habit skipped, again</li>
         </ol>
       </div>
       <figure><img src="assets/v10/photo-scroll.webp" width="1400" height="933" loading="lazy" alt="Someone lying in bed late at night, face lit by their phone"></figure>
