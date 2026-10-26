@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["XJ3L5FAP65.com.focus-cat.focus-cat"],
+        "components": [
+          { "/": "/winter-arc", "comment": "The Winter Arc event: opens its checklist in the app." },
+          { "/": "/winter-arc/", "comment": "The same, with the trailing slash GitHub Pages adds." }
+        ]
+      }
+    ]
+  }
+}
