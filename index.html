@@ -448,7 +448,7 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
          -webkit-tap-highlight-color: transparent; outline: none; }
 .story img { -webkit-user-drag: none; pointer-events: none; }
 
-/* progress bars and name */
+/* progress bars, name and close */
 .st-top { position: absolute; z-index: 5; inset: 0 0 auto; padding: calc(env(safe-area-inset-top) + 8px) 10px 0; color: #fff;
           transition: opacity .2s ease; }
 .st-bars { display: flex; gap: 4px; padding: 0 2px; }
@@ -456,6 +456,9 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
 .st-bars b { display: block; height: 100%; background: #fff; transform: scaleX(0); transform-origin: left; }
 .st-head { display: flex; align-items: center; gap: 9px; margin-top: 10px; padding-left: 4px; font-size: 15px; font-weight: 700; }
 .st-head img { width: 32px; height: 32px; border-radius: 9px; }
+.st-head button { display: grid; place-items: center; width: 44px; height: 44px; margin: -6px -4px -6px auto; padding: 0; border: 0;
+                  background: none; color: inherit; cursor: pointer; }   /* close: shows the normal page */
+.st-head svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
 .story[data-tone="light"] .st-top { color: var(--ink); }
 .story[data-tone="light"] .st-bars i { background: rgba(43,29,26,.16); }
 .story[data-tone="light"] .st-bars b { background: var(--ink); }
@@ -598,7 +601,11 @@ h2 + .st-vis { margin-bottom: 0; }
 <div class="story" id="story" role="region" aria-roledescription="story" aria-label="Dear Brain story" tabindex="-1">
   <div class="st-top">
     <div class="st-bars" aria-hidden="true"></div>
-    <div class="st-head"><img src="assets/v10/icon-128.webp" width="32" height="32" alt="">Dear Brain</div>
+    <div class="st-head"><img src="assets/v10/icon-128.webp" width="32" height="32" alt="">Dear Brain
+      <button type="button" data-story-close aria-label="Close story and show the full page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
   </div>
 
   <section class="st-slide" data-tone="light" data-dur="7" data-label="Dear Brain" style="background:var(--sky-50)">
@@ -1124,6 +1131,7 @@ h2 + .st-vis { margin-bottom: 0; }
   story.addEventListener("contextmenu", e => e.preventDefault());
 
   story.querySelector("[data-story-again]").addEventListener("click", () => go(0));
+  story.querySelector("[data-story-close]").addEventListener("click", () => { setOpen(false, true); scrollTo(0, 0); });
   story.querySelector("[data-story-faq]").addEventListener("click", () => {
     setOpen(false, true); document.getElementById("faq").scrollIntoView();
   });
