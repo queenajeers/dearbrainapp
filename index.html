@@ -454,10 +454,8 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
 .st-bars { display: flex; gap: 4px; padding: 0 2px; }
 .st-bars i { flex: 1; height: 3px; border-radius: 3px; overflow: hidden; background: rgba(255,255,255,.35); }
 .st-bars b { display: block; height: 100%; background: #fff; transform: scaleX(0); transform-origin: left; }
-.st-head { display: flex; align-items: center; gap: 9px; margin-top: 10px; padding-left: 4px; }
+.st-head { display: flex; align-items: center; gap: 9px; margin-top: 10px; padding-left: 4px; font-size: 15px; font-weight: 700; }
 .st-head img { width: 32px; height: 32px; border-radius: 9px; }
-.st-head .who { font-size: 15px; font-weight: 700; }
-.st-head .what { flex: 1; font-size: 14px; opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .story[data-tone="light"] .st-top { color: var(--ink); }
 .story[data-tone="light"] .st-bars i { background: rgba(43,29,26,.16); }
 .story[data-tone="light"] .st-bars b { background: var(--ink); }
@@ -472,89 +470,90 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
 .story[data-tone="dark"] .st-cta { background: #fff; color: #000; }
 .story[data-cta="none"] .st-cta { display: none; }
 
-/* slides */
-.st-slide { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden; visibility: hidden;
-            padding: calc(env(safe-area-inset-top) + 74px) 22px calc(env(safe-area-inset-bottom) + 90px); }
+/* slides: everything sits in one centred block in the middle of the screen, clear of the bars and the
+   button. Pictures are capped by screen height (svh) so the block stays around 60% of the screen. */
+.st-slide { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            overflow: hidden; visibility: hidden; text-align: center;
+            padding: calc(env(safe-area-inset-top) + 84px) 30px calc(env(safe-area-inset-bottom) + 104px); }
 .st-slide.on { visibility: visible; }
-.st-slide[data-cta="none"] { padding-bottom: calc(env(safe-area-inset-bottom) + 22px); }
+.st-slide[data-cta="none"] { padding-bottom: calc(env(safe-area-inset-bottom) + 40px); }
 .st-slide[data-tone="dark"] { color: #fff; }
-.st-slide h1, .st-slide h2 { font-size: clamp(27px, 8vw, 34px); line-height: 1.14; letter-spacing: -.02em; }
-.st-slide p { margin-top: 10px; font-size: clamp(16px, 4.7vw, 18.5px); line-height: 1.5; color: var(--ink-2); }
+.st-slide h1, .st-slide h2 { max-width: 13em; font-size: clamp(25px, 7.4vw, 30px); line-height: 1.15; letter-spacing: -.02em; }
+.st-slide p { max-width: 20em; margin-top: 8px; font-size: clamp(16px, 4.5vw, 17.5px); line-height: 1.45; color: var(--ink-2); }
 .st-slide[data-tone="dark"] p { color: #D6D9EE; }
-.st-slide p b { color: #fff; font-weight: 600; }
-.st-slide > .tag { align-self: flex-start; margin-bottom: 14px; }
-.st-kicker { margin-bottom: 10px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
-.st-slide .store { height: 52px; margin-top: 18px; padding: 0 20px 0 16px; border-radius: 14px; align-self: center; }
-.st-slide .store b { font-size: 20px; }
-.st-slide .store svg { width: 25px; height: 25px; }
-.st-vis { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; margin: 14px 0; }
-.st-vis > img { width: auto; max-width: 78%; max-height: 100%; object-fit: contain; }
-.st-vis.low { align-items: flex-end; margin-bottom: 0; }
-.st-vis > .ph { width: auto; height: 90%; }
-.st-center { align-items: center; text-align: center; }
-.st-mid { justify-content: center; }
+.st-slide .tag { margin-bottom: 14px; font-size: 13px; padding: 6px 12px 6px 9px; }
+.st-slide .tag .ico { width: 16px; height: 16px; }
+.st-kicker { margin-bottom: 12px; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .65; }
+.st-vis { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; margin: 18px 0;
+          height: clamp(120px, 24vh, 220px); height: clamp(120px, 24svh, 220px); }
+.st-vis.tall { height: clamp(190px, 36vh, 320px); height: clamp(190px, 36svh, 320px); }
+.st-vis > img { width: auto; max-width: 80%; max-height: 100%; object-fit: contain; }
+.st-vis > .ph { width: auto; height: 88%; margin-top: 8%; }
+h2 + .st-vis { margin-bottom: 0; }
 
 /* 1. hero */
-.st-hero { align-items: center; text-align: center; background: var(--sky-50); }
-.st-hero .tag { align-self: center; font-size: 13px; padding: 6px 12px 6px 9px; }
-.st-phones { position: relative; flex: 1; min-height: 0; max-height: calc((100vw - 44px) * .95); width: 100%;
-             display: flex; justify-content: center; align-items: flex-start; margin-top: 22px; }
-.st-phones::before { content: ""; position: absolute; left: 50%; top: 10%; width: 150%; aspect-ratio: 1; transform: translateX(-50%);
+.st-phones { position: relative; display: flex; justify-content: center; align-items: flex-start; width: 100%; margin-top: 22px;
+             height: clamp(170px, 32vh, 290px); height: clamp(170px, 32svh, 290px); }
+.st-phones::before { content: ""; position: absolute; left: 50%; top: 4%; width: 92%; aspect-ratio: 1; transform: translateX(-50%);
                      border-radius: 50%; background: var(--peach-100); }
 .st-phones .ph { width: auto; height: 100%; z-index: 2; }
 .st-phones .s { height: 80%; margin-top: 12%; z-index: 1; }
 .st-phones .s:first-child { margin-right: -12%; }
 .st-phones .s:last-child { margin-left: -12%; }
-.st-hero { justify-content: center; }
 
-/* 2. the late-night feed */
-.st-feed { justify-content: flex-end; background: var(--night); }
-.st-feed .bg { position: absolute; inset: 0 0 auto; width: 100%; height: 64%; object-fit: cover; object-position: 32% 50%; }
+/* 2. the late-night feed: the photo fills the slide, darkened so the text stays readable */
+.st-feed { background: var(--night); }
+.st-feed .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 32% 50%; }
 .st-feed::before { content: ""; position: absolute; inset: 0;
-                   background: linear-gradient(180deg, rgba(30,33,53,0) 0%, rgba(30,33,53,.15) 22%, rgba(30,33,53,.9) 48%, var(--night) 62%); }
-.st-txt { position: relative; }
-.st-feed .st-kicker { color: #A9B2E0; opacity: 1; }
-.st-loop { display: grid; justify-items: start; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
-.st-loop li { display: inline-flex; align-items: center; gap: 9px; padding: 10px 16px 10px 12px; border-radius: 999px;
-              background: rgba(255,255,255,.1); font-size: 16px; font-weight: 600; }
+                   background: radial-gradient(120% 70% at 50% 50%, rgba(30,33,53,.82), rgba(30,33,53,.6)); }
+.st-feed > :not(.bg) { position: relative; }
+.st-feed .st-kicker { color: #C3CAF0; opacity: 1; }
+.st-loop { display: grid; justify-items: center; gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; }
+.st-loop li { display: inline-flex; align-items: center; gap: 9px; padding: 10px 18px 10px 14px; border-radius: 999px;
+              background: rgba(255,255,255,.14); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+              font-size: 16px; font-weight: 600; }
 .st-loop li span { font-size: 20px; line-height: 1; }
-.st-loop li.x { background: rgba(230, 52, 30, .24); color: #FFC2B8; }
+.st-loop li.x { background: rgba(230, 52, 30, .32); color: #FFD0C8; }
 
 /* blocker features and the toolkit */
-.st-list { display: grid; gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
-.st-list li { display: flex; align-items: center; gap: 14px; font-size: 15.5px; line-height: 1.4; color: #C9CDE6; }
-.st-list .em { display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 16px;
-               background: rgba(255,255,255,.08); font-size: 26px; }
-.st-list b { display: block; margin-bottom: 2px; font-size: 17px; color: #fff; }
-.st-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px; }
-.st-tiles > div { padding: 16px 14px 16px; border-radius: 20px; box-shadow: 0 0 0 1px rgba(43,29,26,.05); }
-.st-tiles .em { display: block; font-size: 30px; line-height: 1; }
-.st-tiles b { display: block; margin-top: 12px; font-size: 16px; line-height: 1.25; }
-.st-tiles span:last-child { display: block; margin-top: 5px; font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
+.st-list { display: grid; gap: 10px; width: 100%; max-width: 300px; margin: 24px 0 0; padding: 0; list-style: none; text-align: left; }
+.st-list li { display: flex; align-items: center; gap: 14px; font-size: 14.5px; line-height: 1.35; color: #C9CDE6; }
+.st-list .em { display: grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 14px;
+               background: rgba(255,255,255,.08); font-size: 23px; }
+.st-list b { display: block; font-size: 16.5px; color: #fff; }
+.st-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; max-width: 300px; margin-top: 24px; }
+.st-tiles > div { display: grid; justify-items: center; gap: 8px; padding: 18px 10px; border-radius: 20px;
+                  box-shadow: 0 0 0 1px rgba(43,29,26,.05); }
+.st-tiles span { font-size: 30px; line-height: 1; }
+.st-tiles b { font-size: 15px; line-height: 1.25; }
 
 /* photo proof and journal collages */
 .st-collage { position: relative; height: 100%; aspect-ratio: .86; max-width: 100%; }
 .st-collage > .ph { position: absolute; left: 50%; top: 4%; width: auto; height: 94%; transform: translateX(-50%); }
 .st-collage .pol { width: 38%; }
-.st-collage .pol figcaption { font-size: 13px; }
+.st-collage .pol figcaption { font-size: 12.5px; }
 .st-collage .buddy { position: absolute; z-index: 3; left: 0; bottom: 3%; width: 32%; }
-.st-slide > .st-vis + .tag { margin-top: 4px; }
+.tag + .st-vis { margin-top: 4px; }
 
 /* real life photos */
-.st-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 8px; width: 100%; height: 100%;
-           margin: 0; padding: 0; list-style: none; }
+.st-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; width: 100%; max-width: 320px;
+           margin: 22px 0 0; padding: 0; list-style: none; height: clamp(220px, 38vh, 330px); height: clamp(220px, 38svh, 330px); }
 .st-grid li { position: relative; min-height: 0; overflow: hidden; border-radius: 16px; background: var(--line); }
 .st-grid img { width: 100%; height: 100%; object-fit: cover; }
 .st-grid span { position: absolute; left: 7px; bottom: 7px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 5px;
-                border-radius: 999px; background: rgba(255,255,255,.95); font-size: 13px; font-weight: 600; }
+                border-radius: 999px; background: rgba(255,255,255,.95); font-size: 13px; font-weight: 600; white-space: nowrap; }
 .st-grid .ico { width: 18px; height: 18px; padding: 3px; border-radius: 50%; background: var(--mint); color: #fff; stroke-width: 3.4; }
 
 /* last slide */
 .st-end p { color: #2E4652; }
-.st-links { display: flex; justify-content: center; gap: 4px; margin-top: 14px; }
+.st-end .st-vis { margin-top: 0; }
+.st-slide .store { height: 52px; margin-top: 20px; padding: 0 20px 0 16px; border-radius: 14px; }
+.st-slide .store b { font-size: 20px; }
+.st-slide .store svg { width: 25px; height: 25px; }
+.st-links { display: flex; justify-content: center; gap: 4px; margin-top: 12px; }
 .st-links a, .st-links button, .st-again { display: inline-grid; place-items: center; min-height: 44px; padding: 0 10px; border: 0; background: none;
                                            font: 600 15px var(--font); color: #1F3A47; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
-.st-again { align-self: center; text-decoration: none; }
+.st-again { text-decoration: none; }
 
 /* each part of a slide arrives a moment after the last */
 .st-slide.on .a { animation: st-in .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0s); }
@@ -599,18 +598,13 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
 <div class="story" id="story" role="region" aria-roledescription="story" aria-label="Dear Brain story" tabindex="-1">
   <div class="st-top">
     <div class="st-bars" aria-hidden="true"></div>
-    <div class="st-head">
-      <img src="assets/v10/icon-128.webp" width="32" height="32" alt="">
-      <span class="who">Dear Brain</span><span class="what" aria-live="polite"></span>
-    </div>
+    <div class="st-head"><img src="assets/v10/icon-128.webp" width="32" height="32" alt="">Dear Brain</div>
   </div>
 
-  <section class="st-slide st-hero" data-tone="light" data-cta="none" data-dur="7" data-label="Habit tracker">
+  <section class="st-slide" data-tone="light" data-dur="7" data-label="Dear Brain" style="background:var(--sky-50)">
     <span class="tag a"><svg class="ico"><use href="#i-lock"/></svg>Habit tracker with a strict app blocker</span>
     <h1 class="a" style="--d:.1s">Don’t lose your <span class="mark">habits</span> to doomscrolling</h1>
-    <p class="a" style="--d:.2s">Dear Brain locks TikTok, Instagram and YouTube until today’s habits are done.</p>
-    <a class="store a" style="--d:.3s" data-appstore href="https://apps.apple.com/app/id6816478121" aria-label="Download Dear Brain on the App Store">
-      <svg aria-hidden="true"><use href="#apple"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+    <p class="a" style="--d:.2s">Your apps stay locked until today’s habits are done.</p>
     <div class="st-phones a" style="--d:.35s">
       <div class="ph s" style="--w:1.1477;--x:.0738;--y:-.0065"><img src="assets/v10/phone-timer.webp" width="711" height="1247" alt="Morning Journaling habit with a timer and small steps"></div>
       <div class="ph c" style="--w:.9721;--x:-.0139;--y:-.0065"><img src="assets/v10/phone-shield.webp" width="602" height="1247" alt="Lock screen: Is this important? Your apps are locked until you finish Morning Journaling"></div>
@@ -618,66 +612,63 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
     </div>
   </section>
 
-  <section class="st-slide st-feed" data-tone="dark" data-dur="9" data-label="1:12 AM">
+  <section class="st-slide st-feed" data-tone="dark" data-dur="7" data-label="1:12 AM">
     <img class="bg" src="assets/v10/photo-scroll.webp" width="1400" height="933" alt="Someone lying in bed late at night, face lit by their phone">
-    <div class="st-txt">
-      <span class="st-kicker a">1:12 AM, again</span>
-      <h2 class="a" style="--d:.1s">It’s not you. It’s the feed.</h2>
-      <p class="a" style="--d:.2s">Feeds are built to keep you scrolling. One quick check turns into an hour.</p>
-      <ol class="st-loop" aria-label="The scroll loop">
-        <li class="a" style="--d:1s"><span aria-hidden="true">📱</span>Open it for one thing</li>
-        <li class="a" style="--d:1.9s"><span aria-hidden="true">⏳</span>An hour is gone</li>
-        <li class="a x" style="--d:2.8s"><span aria-hidden="true">😩</span>Habit skipped, again</li>
-      </ol>
-    </div>
+    <span class="st-kicker a">1:12 AM, again</span>
+    <h2 class="a" style="--d:.1s">It’s not you.<br>It’s the feed.</h2>
+    <ol class="st-loop" aria-label="The scroll loop">
+      <li class="a" style="--d:.8s"><span aria-hidden="true">📱</span>Open it for one thing</li>
+      <li class="a" style="--d:1.6s"><span aria-hidden="true">⏳</span>An hour is gone</li>
+      <li class="a x" style="--d:2.4s"><span aria-hidden="true">😩</span>Habit skipped, again</li>
+    </ol>
   </section>
 
-  <section class="st-slide st-center" data-tone="light" data-dur="6" data-label="How it works" style="background:var(--peach-100)">
-    <span class="st-kicker a">Step 1 of 3</span>
+  <section class="st-slide" data-tone="light" data-dur="5" data-label="How it works, step 1" style="background:var(--peach-100)">
+    <span class="st-kicker a">How it works · 1 of 3</span>
     <div class="st-vis a" style="--d:.1s"><img src="assets/v10/mascot-journal.webp" width="560" height="575" alt=""></div>
     <h2 class="a" style="--d:.2s">Pick a habit</h2>
-    <p class="a" style="--d:.3s">Start from 100+ ready-made habits, from reading to running, or make your own. Give it a time.</p>
+    <p class="a" style="--d:.3s">Choose from 100+ habits or make your own.</p>
   </section>
 
-  <section class="st-slide st-center" data-tone="light" data-dur="6" data-label="How it works" style="background:var(--sky-100)">
-    <span class="st-kicker a">Step 2 of 3</span>
+  <section class="st-slide" data-tone="light" data-dur="5" data-label="How it works, step 2" style="background:var(--sky-100)">
+    <span class="st-kicker a">How it works · 2 of 3</span>
     <div class="st-vis a" style="--d:.1s"><img src="assets/v10/mascot-stop.webp" width="560" height="514" alt=""></div>
     <h2 class="a" style="--d:.2s">Your apps lock</h2>
-    <p class="a" style="--d:.3s">When it’s time, the apps you picked lock until the habit is done. No snooze, no “five more minutes”.</p>
+    <p class="a" style="--d:.3s">No snooze. No “five more minutes”.</p>
   </section>
 
-  <section class="st-slide st-center" data-tone="light" data-dur="6" data-label="How it works" style="background:var(--mint-50)">
-    <span class="st-kicker a">Step 3 of 3</span>
+  <section class="st-slide" data-tone="light" data-dur="5" data-label="How it works, step 3" style="background:var(--mint-50)">
+    <span class="st-kicker a">How it works · 3 of 3</span>
     <div class="st-vis a" style="--d:.1s"><img src="assets/v10/mascot-camera.webp" width="560" height="582" alt=""></div>
     <h2 class="a" style="--d:.2s">Snap, unlock, streak</h2>
-    <p class="a" style="--d:.3s">Take a photo as proof. Your apps open again, the day is saved, and your streak grows.</p>
+    <p class="a" style="--d:.3s">A photo proves it’s done. Apps open, streak grows.</p>
   </section>
 
-  <section class="st-slide" data-tone="dark" data-dur="7" data-label="App blocker" style="background:var(--night)">
-    <span class="tag dark a"><svg class="ico"><use href="#i-lock"/></svg>Strict app blocker</span>
+  <section class="st-slide" data-tone="dark" data-dur="6" data-label="App blocker" style="background:var(--night)">
+    <span class="tag dark a"><svg class="ico"><use href="#i-lock"/></svg>App blocker</span>
     <h2 class="a" style="--d:.1s">Strict means strict</h2>
-    <p class="a" style="--d:.2s">Most blockers come with a skip button. Dear Brain doesn’t. <b>Your apps stay locked until the habit is done.</b></p>
-    <div class="st-vis low a" style="--d:.35s">
+    <p class="a" style="--d:.2s">No skip button. Apps stay locked until the habit is done.</p>
+    <div class="st-vis tall a" style="--d:.35s">
       <div class="ph" style="--w:1.2783;--x:.1539;--y:.0758"><img src="assets/v10/phone-shield-apps.webp" width="792" height="1351" alt="Instagram, TikTok, Facebook and YouTube locked, with the Dear Brain mascot asking: Is this important?"></div>
     </div>
   </section>
 
-  <section class="st-slide st-mid" data-tone="dark" data-dur="10" data-label="App blocker" style="background:var(--night-2)">
-    <span class="st-kicker a">Strict, on your terms</span>
+  <section class="st-slide" data-tone="dark" data-dur="8" data-label="App blocker" style="background:var(--night-2)">
+    <span class="st-kicker a">App blocker</span>
     <h2 class="a" style="--d:.1s">You choose what gets locked</h2>
     <ul class="st-list">
-      <li class="a" style="--d:.5s"><span class="em" aria-hidden="true">🔒</span><span><b>Lock any app</b>TikTok, Instagram, YouTube, games.</span></li>
-      <li class="a" style="--d:1.1s"><span class="em" aria-hidden="true">⏰</span><span><b>Time blocks that repeat</b>Phone-free mornings, deep work, bedtime.</span></li>
-      <li class="a" style="--d:1.7s"><span class="em" aria-hidden="true">👟</span><span><b>Your apps, your rules</b>Limit by opens, steps walked or where you are.</span></li>
-      <li class="a" style="--d:2.3s"><span class="em" aria-hidden="true">🙈</span><span><b>Keep the apps, lose the feeds</b>Hide Reels and Shorts in Safari.</span></li>
+      <li class="a" style="--d:.5s"><span class="em" aria-hidden="true">🔒</span><span><b>Any app</b>TikTok, Instagram, YouTube, games</span></li>
+      <li class="a" style="--d:1s"><span class="em" aria-hidden="true">⏰</span><span><b>Time blocks</b>Mornings, deep work, bedtime</span></li>
+      <li class="a" style="--d:1.5s"><span class="em" aria-hidden="true">👟</span><span><b>Your own rules</b>By opens, steps or place</span></li>
+      <li class="a" style="--d:2s"><span class="em" aria-hidden="true">🙈</span><span><b>No more feeds</b>Hide Reels and Shorts in Safari</span></li>
     </ul>
   </section>
 
-  <section class="st-slide" data-tone="light" data-dur="8" data-label="Photo proof" style="background:var(--sky-100)">
+  <section class="st-slide" data-tone="light" data-dur="6" data-label="Photo proof" style="background:var(--sky-100)">
     <span class="tag a"><svg class="ico"><use href="#i-camera"/></svg>Photo proof</span>
     <h2 class="a" style="--d:.1s">Proof, not promises</h2>
-    <p class="a" style="--d:.2s">In Strict Mode your apps unlock only after you snap a photo of the habit, done.</p>
-    <div class="st-vis">
+    <p class="a" style="--d:.2s">Apps unlock only after a photo of the habit.</p>
+    <div class="st-vis tall">
       <div class="st-collage a" style="--d:.3s">
         <div class="ph" style="--w:1.1806;--x:.0892;--y:.0414"><img src="assets/v10/phone-proof.webp" width="732" height="1309" alt="Camera screen: Time for some evidence, Morning Journaling, Verify and unlock apps"></div>
         <figure class="pol a pop" style="--d:1s;--r:-7deg"><img src="assets/v10/photo-run.webp" width="880" height="1100" alt="Selfie after a morning run in the park">
@@ -688,54 +679,51 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
     </div>
   </section>
 
-  <section class="st-slide" data-tone="light" data-dur="8" data-label="Journal" style="background:var(--peach-100)">
-    <div class="st-vis">
-      <div class="st-collage a">
+  <section class="st-slide" data-tone="light" data-dur="6" data-label="Journal and streaks" style="background:var(--peach-100)">
+    <span class="tag a"><svg class="ico"><use href="#i-flame"/></svg>Journal and streaks</span>
+    <div class="st-vis tall">
+      <div class="st-collage a" style="--d:.1s">
         <div class="ph" style="--w:1.2168;--x:.1079;--y:.0516"><img src="assets/v10/phone-journal.webp" width="754" height="1334" alt="My memories: Watched the sunrise, No phone till 9am, Up before my alarm"></div>
         <img class="buddy pop" style="--d:.8s" src="assets/v10/mascot-cheer.webp" width="560" height="516" alt="">
       </div>
     </div>
-    <span class="tag a" style="--d:.2s"><svg class="ico"><use href="#i-flame"/></svg>Journal and streaks</span>
     <h2 class="a" style="--d:.3s">A camera roll full of wins</h2>
-    <p class="a" style="--d:.4s">Every proof photo becomes a memory, with your mood and a line about your day.</p>
+    <p class="a" style="--d:.4s">Every proof photo becomes a memory.</p>
   </section>
 
-  <section class="st-slide st-mid" data-tone="light" data-dur="10" data-label="Toolkit" style="background:var(--lilac-50)">
+  <section class="st-slide" data-tone="light" data-dur="7" data-label="Toolkit" style="background:var(--lilac-50)">
     <span class="st-kicker a">The toolkit</span>
     <h2 class="a" style="--d:.1s">Everything your habits need</h2>
     <div class="st-tiles">
-      <div class="a" style="--d:.5s;background:var(--peach-100)"><span class="em" aria-hidden="true">⏱️</span><b>A timer that keeps you going</b><span>Small steps, then your apps open.</span></div>
-      <div class="a" style="--d:1s;background:var(--sky-100)"><span class="em" aria-hidden="true">🗓️</span><b>Habits on a schedule</b><span>Time blocks that repeat every day.</span></div>
-      <div class="a" style="--d:1.5s;background:var(--white)"><span class="em" aria-hidden="true">📏</span><b>Rules for every app</b><span>TikTok only after 5,000 steps.</span></div>
-      <div class="a" style="--d:2s;background:var(--mint-50)"><span class="em" aria-hidden="true">🔥</span><b>Streak on your Home Screen</b><span>Widgets keep it in sight.</span></div>
+      <div class="a" style="--d:.5s;background:var(--peach-100)"><span aria-hidden="true">⏱️</span><b>Step-by-step timer</b></div>
+      <div class="a" style="--d:.9s;background:var(--sky-100)"><span aria-hidden="true">🗓️</span><b>Habits on a schedule</b></div>
+      <div class="a" style="--d:1.3s;background:var(--white)"><span aria-hidden="true">📏</span><b>Rules for every app</b></div>
+      <div class="a" style="--d:1.7s;background:var(--mint-50)"><span aria-hidden="true">🔥</span><b>Streak widgets</b></div>
     </div>
   </section>
 
-  <section class="st-slide" data-tone="light" data-dur="7" data-label="Real life" style="background:var(--paper)">
-    <h2 class="a">Made for real, everyday life</h2>
-    <p class="a" style="--d:.1s">Small habits that add up to days you’re proud of.</p>
-    <div class="st-vis">
-      <ul class="st-grid">
-        <li class="pop" style="--d:.3s"><img src="assets/v10/photo-run.webp" width="880" height="1100" alt="Smiling after a sunrise run in the park"><span><svg class="ico"><use href="#i-check"/></svg>Morning run</span></li>
-        <li class="pop" style="--d:.45s"><img src="assets/v10/photo-journal.webp" width="880" height="1320" alt="Open journal with handwriting next to a coffee mug"><span><svg class="ico"><use href="#i-check"/></svg>Journaling</span></li>
-        <li class="pop" style="--d:.6s"><img src="assets/v10/photo-guitar.webp" width="880" height="1100" alt="Practicing acoustic guitar on the sofa"><span><svg class="ico"><use href="#i-check"/></svg>Guitar</span></li>
-        <li class="pop" style="--d:.75s"><img src="assets/v10/photo-cook.webp" width="880" height="1100" alt="Laughing while chopping vegetables in a home kitchen"><span><svg class="ico"><use href="#i-check"/></svg>Cook dinner</span></li>
-        <li class="pop" style="--d:.9s"><img src="assets/v10/photo-yoga.webp" width="880" height="1100" alt="Stretching on a yoga mat in the living room"><span><svg class="ico"><use href="#i-check"/></svg>Stretch</span></li>
-        <li class="pop" style="--d:1.05s"><img src="assets/v10/photo-plants.webp" width="880" height="1100" alt="Watering houseplants on a sunny windowsill"><span><svg class="ico"><use href="#i-check"/></svg>Water plants</span></li>
-      </ul>
-    </div>
+  <section class="st-slide" data-tone="light" data-dur="6" data-label="Real life" style="background:var(--paper)">
+    <span class="st-kicker a">Real life</span>
+    <h2 class="a" style="--d:.1s">Small habits, good days</h2>
+    <ul class="st-grid">
+      <li class="pop" style="--d:.3s"><img src="assets/v10/photo-run.webp" width="880" height="1100" alt="Smiling after a sunrise run in the park"><span><svg class="ico"><use href="#i-check"/></svg>Morning run</span></li>
+      <li class="pop" style="--d:.5s"><img src="assets/v10/photo-journal.webp" width="880" height="1320" alt="Open journal with handwriting next to a coffee mug"><span><svg class="ico"><use href="#i-check"/></svg>Journaling</span></li>
+      <li class="pop" style="--d:.7s"><img src="assets/v10/photo-guitar.webp" width="880" height="1100" alt="Practicing acoustic guitar on the sofa"><span><svg class="ico"><use href="#i-check"/></svg>Guitar</span></li>
+      <li class="pop" style="--d:.9s"><img src="assets/v10/photo-cook.webp" width="880" height="1100" alt="Laughing while chopping vegetables in a home kitchen"><span><svg class="ico"><use href="#i-check"/></svg>Cook dinner</span></li>
+    </ul>
   </section>
 
-  <section class="st-slide st-center" data-tone="light" data-dur="6" data-label="Privacy" style="background:var(--mint-50)">
-    <div class="st-vis a"><img src="assets/v10/mascot-meditate.webp" width="560" height="594" alt=""></div>
-    <h2 class="a" style="--d:.15s">Private by design</h2>
-    <p class="a" style="--d:.25s">No ads and no tracking. Your habits, journal and photos stay on your iPhone and your own iCloud.</p>
+  <section class="st-slide" data-tone="light" data-dur="5" data-label="Privacy" style="background:var(--mint-50)">
+    <span class="st-kicker a">Privacy</span>
+    <div class="st-vis a" style="--d:.1s"><img src="assets/v10/mascot-meditate.webp" width="560" height="594" alt=""></div>
+    <h2 class="a" style="--d:.2s">Private by design</h2>
+    <p class="a" style="--d:.3s">No ads, no tracking. Your photos stay on your iPhone and iCloud.</p>
   </section>
 
-  <section class="st-slide st-center st-end" data-tone="light" data-cta="none" data-dur="0" data-label="Get the app" style="background:var(--sky)">
+  <section class="st-slide st-end" data-tone="light" data-cta="none" data-dur="0" data-label="Get the app" style="background:var(--sky)">
     <div class="st-vis a"><img src="assets/v10/mascot-hug.webp" width="560" height="590" alt="The Dear Brain mascot hugging a heart"></div>
     <h2 class="a" style="--d:.1s">Dear Brain,<br>enough scrolling.</h2>
-    <p class="a" style="--d:.2s">Go live a little. Your habits are waiting.</p>
+    <p class="a" style="--d:.2s">Your habits are waiting.</p>
     <a class="store a" style="--d:.3s" data-appstore href="https://apps.apple.com/app/id6816478121" aria-label="Download Dear Brain on the App Store">
       <svg aria-hidden="true"><use href="#apple"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
     <nav class="st-links a" style="--d:.4s" aria-label="More">
@@ -1071,14 +1059,13 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
     const i = document.createElement("i"), b = document.createElement("b");
     i.appendChild(b); story.querySelector(".st-bars").appendChild(i); return b;
   });
-  const label = story.querySelector(".what");
   const themeColor = document.querySelector('meta[name="theme-color"]');
   const pageColor = themeColor.content;
   const page = [...document.body.children].filter(el => el !== story && el.tagName !== "SCRIPT");
   let at = 0, played = 0, last = 0, open = false, held = false;
 
   slides.forEach((s, k) => { s.setAttribute("role", "group"); s.setAttribute("aria-roledescription", "slide");
-                             s.setAttribute("aria-label", `${k + 1} of ${slides.length}`); });
+                             s.setAttribute("aria-label", `${s.dataset.label}, ${k + 1} of ${slides.length}`); });
 
   function go(n) {
     at = Math.max(0, Math.min(slides.length - 1, n)); played = 0;
@@ -1087,7 +1074,6 @@ footer .copy { margin-top: 24px; color: var(--muted); font-size: 13.5px; }
     const s = slides[at];
     story.dataset.tone = s.dataset.tone;
     story.dataset.cta = s.dataset.cta || "";
-    label.textContent = s.dataset.label;
     themeColor.content = getComputedStyle(s).backgroundColor;
   }
   const next = () => { if (at < slides.length - 1) go(at + 1); };
