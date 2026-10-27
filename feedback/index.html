@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Feedback · Dear Brain</title>
+<meta name="description" content="Tell us what you think of Dear Brain: ideas, bugs, or anything else.">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://dearbrainapp.com/feedback/">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Gabarito:wght@700;800&display=swap">
+<style>
+:root { color-scheme: light; --ink: #111a3b; --ink-2: #414a6b; --muted: #858ba4; --line: #eceef4; --brain: #f0727a; --sky-soft: #eef8fe; --field: #ffffff; --error: #c8333d; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; color: var(--ink); font: 400 1.0625rem/1.65 "Figtree", system-ui, sans-serif; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px) 80px; }
+header { display: flex; align-items: center; gap: 10px; padding: 22px 0 8px; }
+header a { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 800 1.25rem "Gabarito", system-ui, sans-serif; }
+header img { width: 36px; height: 36px; border-radius: 9px; }
+h1 { font: 800 clamp(2rem, 5vw, 2.8rem)/1.1 "Gabarito", system-ui, sans-serif; margin: 36px 0 6px; letter-spacing: -0.02em; }
+.lede { font-size: 1.15rem; margin: 0 0 28px; }
+h2 { font: 700 1.3rem/1.3 "Gabarito", system-ui, sans-serif; margin: 0 0 8px; }
+p { color: var(--ink-2); }
+a { color: var(--brain); }
+
+.card { background: var(--sky-soft); border-radius: 20px; padding: 24px 22px; margin: 24px 0; }
+form { display: grid; gap: 22px; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+legend, .label { display: block; font-weight: 700; color: var(--ink); margin: 0 0 10px; padding: 0; }
+.label em { font-style: normal; font-weight: 500; color: var(--muted); }
+.topics { display: flex; flex-wrap: wrap; gap: 10px; }
+.topics label { position: relative; }
+.topics input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.topics span { display: inline-block; background: var(--field); border: 2px solid var(--line); border-radius: 999px; padding: 8px 16px; font-weight: 600; color: var(--ink-2); cursor: pointer; transition: border-color .15s, color .15s, background .15s; }
+.topics input:checked + span { border-color: var(--brain); color: var(--ink); background: #fff1f2; }
+.topics input:focus-visible + span { outline: 3px solid var(--ink); outline-offset: 2px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+input[type="text"], input[type="email"], textarea { width: 100%; background: var(--field); color: var(--ink); border: 2px solid var(--line); border-radius: 14px; padding: 12px 14px; font: inherit; font-size: 1rem; }
+textarea { resize: vertical; min-height: 150px; }
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus { outline: none; border-color: var(--brain); }
+[aria-invalid="true"] { border-color: var(--error) !important; }
+.count { display: block; text-align: right; color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+button[type="submit"] { border: 0; cursor: pointer; background: var(--brain); color: #fff; font: 700 1.05rem/1.3 "Figtree", system-ui, sans-serif; padding: 14px 24px; border-radius: 14px; }
+button[type="submit"]:hover { filter: brightness(1.05); }
+button[type="submit"]:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+button[type="submit"]:disabled { opacity: .6; cursor: progress; }
+.status { margin: 0; font-size: 0.95rem; color: var(--ink-2); }
+.status.error { color: var(--error); }
+.fine { margin: 0; font-size: 0.9rem; color: var(--muted); }
+.thanks { text-align: center; padding: 36px 22px; }
+.thanks .big { font-size: 3rem; line-height: 1; margin: 0 0 12px; }
+.thanks button { border: 0; background: none; color: var(--brain); font: 600 1rem "Figtree", system-ui, sans-serif; cursor: pointer; text-decoration: underline; padding: 4px; }
+footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 20px; color: var(--muted); font-size: 0.9rem; }
+footer a { color: var(--ink-2); margin-right: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a href="/"><img src="/assets/apple-touch-icon.png" alt="">Dear Brain</a></header>
+<main>
+<h1>Feedback</h1>
+<p class="lede">Got an idea, found a bug, or just want to say hi? Every note goes straight to the people who make Dear Brain.</p>
+
+<div class="card" id="form-card">
+  <form id="feedback-form" novalidate>
+    <fieldset>
+      <legend>What's it about?</legend>
+      <div class="topics">
+        <label><input type="radio" name="topic" value="idea" checked><span>💡 An idea</span></label>
+        <label><input type="radio" name="topic" value="bug"><span>🐞 Something's broken</span></label>
+        <label><input type="radio" name="topic" value="praise"><span>💛 I love it</span></label>
+        <label><input type="radio" name="topic" value="other"><span>💬 Something else</span></label>
+      </div>
+    </fieldset>
+
+    <div>
+      <label class="label" for="message">Your feedback</label>
+      <textarea id="message" name="message" maxlength="4000" required placeholder="Tell us what's on your mind. For bugs, what happened and what you expected."></textarea>
+      <span class="count" id="count">0 / 4000</span>
+    </div>
+
+    <div class="row">
+      <div>
+        <label class="label" for="name">Name <em>(optional)</em></label>
+        <input type="text" id="name" name="name" maxlength="100" autocomplete="name">
+      </div>
+      <div>
+        <label class="label" for="email">Email <em>(optional, for a reply)</em></label>
+        <input type="email" id="email" name="email" maxlength="200" autocomplete="email" inputmode="email">
+      </div>
+    </div>
+
+    <div class="hp" aria-hidden="true">
+      <label for="website">Leave this empty</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="actions">
+      <button type="submit" id="submit">Send feedback</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </div>
+    <p class="fine">We store what you send here, plus your browser type, so we can read it and follow up. See our <a href="/privacy/">Privacy Policy</a>.</p>
+  </form>
+</div>
+
+<div class="card thanks" id="thanks" hidden tabindex="-1">
+  <p class="big">💌</p>
+  <h2>Thank you!</h2>
+  <p>Your feedback is in. We read every single note.</p>
+  <button type="button" id="again">Send another</button>
+</div>
+</main>
+<footer><a href="/">Home</a><a href="/support/">Support</a><a href="/feedback/">Feedback</a><a href="/terms/">Terms of Use</a><a href="/privacy/">Privacy Policy</a><br>© 2026 Dear Brain</footer>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore-lite.js";
+
+// Public web config for the Dear Brain Firebase project. These values identify
+// the project; what visitors may write is enforced by the Firestore rules.
+const firebaseConfig = {
+  apiKey: "AIzaSyCeU-Oe0XOHhD33CS8004ySe4tWinnoIwI",
+  authDomain: "dear-brain.firebaseapp.com",
+  projectId: "dear-brain",
+  appId: "1:248068144930:web:1ae39c618f3a4d0828ef7b",
+};
+
+const db = getFirestore(initializeApp(firebaseConfig));
+
+const form = document.getElementById("feedback-form");
+const message = document.getElementById("message");
+const email = document.getElementById("email");
+const count = document.getElementById("count");
+const status = document.getElementById("status");
+const submit = document.getElementById("submit");
+const formCard = document.getElementById("form-card");
+const thanks = document.getElementById("thanks");
+
+const setStatus = (text, isError = false) => {
+  status.textContent = text;
+  status.classList.toggle("error", isError);
+};
+
+message.addEventListener("input", () => {
+  count.textContent = `${message.value.length} / 4000`;
+  message.removeAttribute("aria-invalid");
+});
+email.addEventListener("input", () => email.removeAttribute("aria-invalid"));
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const data = new FormData(form);
+  const text = data.get("message").trim();
+  const reply = data.get("email").trim();
+
+  if (!text) {
+    message.setAttribute("aria-invalid", "true");
+    message.focus();
+    return setStatus("Please write a few words first.", true);
+  }
+  if (reply && !email.checkValidity()) {
+    email.setAttribute("aria-invalid", "true");
+    email.focus();
+    return setStatus("That email doesn't look right.", true);
+  }
+
+  submit.disabled = true;
+  setStatus("Sending…");
+  try {
+    // Bots fill the hidden field; pretend it worked and store nothing.
+    if (!data.get("website")) {
+      await addDoc(collection(db, "feedback"), {
+        topic: data.get("topic"),
+        message: text,
+        name: data.get("name").trim(),
+        email: reply,
+        page: location.pathname,
+        userAgent: navigator.userAgent.slice(0, 300),
+        createdAt: serverTimestamp(),
+      });
+    }
+    form.reset();
+    count.textContent = "0 / 4000";
+    setStatus("");
+    formCard.hidden = true;
+    thanks.hidden = false;
+    thanks.focus();
+  } catch (error) {
+    console.error(error);
+    setStatus("Sorry, that didn't go through. Please try again in a moment.", true);
+  } finally {
+    submit.disabled = false;
+  }
+});
+
+document.getElementById("again").addEventListener("click", () => {
+  thanks.hidden = true;
+  formCard.hidden = false;
+  message.focus();
+});
+</script>
+</body>
+</html>
