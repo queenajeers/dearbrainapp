@@ -12,113 +12,132 @@
 <meta property="og:url" content="https://dearbrainapp.com/printables/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#FFFDF9">
+<meta name="apple-itunes-app" content="app-id=6816478121">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
 <style>
 :root {
   color-scheme: light;
-  --ink: #3A2E2B; --ink2: #6F625D; --muted: #A79A93; --line: #EDE4DB; --cream: #F8F2EB; --paper: #FFFDF9;
-  --purple: #8C80D8; --lav: #EFEBFB; --night: #3A2E2B;
+  --ink: #2B1D1A; --ink2: #5C4A45; --muted: #8C7C76; --line: #EDE4DB; --cream: #F8F2EB; --paper: #FFFDF9;
+  --purple: #6E62D9; --lav: #EFEBFB; --night: #2B1D1A;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.6 "Jost", system-ui, sans-serif; -webkit-font-smoothing: antialiased; padding-bottom: 90px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 "Figtree", system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; padding-bottom: 90px; }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
-h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; letter-spacing: 0; line-height: 1.05; margin: 0; }
-.script { font-family: "Allura", cursive; font-weight: 400; color: var(--purple); }
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 
 header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
-.brand { display: flex; align-items: center; gap: 8px; text-decoration: none; font: 600 1.35rem "Cormorant Garamond", serif; }
+.brand { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 800; font-size: 1.1rem; }
 .brand img { width: 30px; height: 30px; border-radius: 8px; }
 
 /* Hero */
 .hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; padding: 16px 0 56px; }
 .shot { border-radius: 22px; overflow: hidden; background: var(--cream); }
-.tag { display: inline-block; font-weight: 500; font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--purple); background: var(--lav); padding: 6px 12px; border-radius: 99px; }
-.hero h1 { font-size: clamp(2.6rem, 6vw, 3.8rem); margin: 14px 0 12px; }
-.hero h1 .script { display: block; font-size: 1.35em; line-height: .8; }
-.lede { color: var(--ink2); font-size: 1.12rem; margin: 0 0 22px; }
+.tag { display: inline-block; font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--purple); background: var(--lav); padding: 6px 12px; border-radius: 99px; }
+.hero h1 { font-size: clamp(2.4rem, 6vw, 3.4rem); margin: 14px 0 12px; }
+.hero h1 span { color: var(--purple); }
+.lede { color: var(--ink2); font-size: 1.15rem; margin: 0 0 22px; }
 .price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
-.price b { font: 600 3rem/1 "Cormorant Garamond", serif; }
-.price span { font-weight: 500; color: var(--purple); letter-spacing: .04em; }
-.count { display: flex; align-items: center; gap: 10px; font-size: .92rem; color: var(--ink2); margin: 0 0 18px; flex-wrap: wrap; }
+.price b { font-weight: 800; font-size: 2.6rem; line-height: 1; }
+.price span { font-weight: 700; color: var(--purple); }
+.count { display: flex; align-items: center; gap: 10px; font-size: .95rem; color: var(--ink2); margin: 0 0 18px; flex-wrap: wrap; }
 .count .t { display: inline-flex; gap: 4px; }
-.count .t i { font-style: normal; font-weight: 600; color: var(--ink); background: var(--cream); border-radius: 8px; padding: 3px 7px; font-variant-numeric: tabular-nums; min-width: 2.4em; text-align: center; }
-.btn { display: block; width: 100%; border: 0; cursor: pointer; text-align: center; text-decoration: none; background: var(--ink); color: #fff; font: 500 1.05rem "Jost", sans-serif; letter-spacing: .12em; text-transform: uppercase; padding: 18px; border-radius: 99px; box-shadow: 0 10px 24px rgba(58,46,43,.22); transition: transform .1s, box-shadow .1s; }
-.btn:active { transform: translateY(2px); box-shadow: 0 4px 10px rgba(58,46,43,.2); }
-.ticks { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 6px; color: var(--ink2); font-size: .95rem; }
+.count .t i { font-style: normal; font-weight: 700; color: var(--ink); background: var(--cream); border-radius: 8px; padding: 3px 7px; font-variant-numeric: tabular-nums; min-width: 2.4em; text-align: center; }
+.btn { display: block; width: 100%; border: 0; cursor: pointer; text-align: center; text-decoration: none; background: var(--ink); color: #fff; font: 700 1.1rem "Figtree", sans-serif; padding: 18px; border-radius: 16px; box-shadow: 0 5px 0 #000; transition: transform .1s, box-shadow .1s; }
+.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #000; }
+.btn.purple { background: var(--purple); box-shadow: 0 5px 0 #4B40B0; }
+.btn.light { background: #fff; color: var(--ink); box-shadow: 0 5px 0 #d9d0c7; border: 1.5px solid var(--line); }
+.ticks { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 6px; color: var(--ink2); font-size: .98rem; }
 .ticks li::before { content: "✓"; color: var(--purple); font-weight: 800; margin-right: 8px; }
 
 section.block { padding: 56px 0; border-top: 1px solid var(--line); }
-.block h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); margin-bottom: 8px; }
-.block .intro { color: var(--ink2); margin: 0 0 28px; max-width: 34em; font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.2rem; }
+.block h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 8px; }
+.block .intro { color: var(--ink2); margin: 0 0 28px; max-width: 34em; font-size: 1.1rem; }
 
 /* What's inside */
 .pages { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .pages figure { margin: 0; }
-.pages img { border-radius: 6px; box-shadow: 0 1px 2px rgba(58,46,43,.08), 0 10px 24px rgba(58,46,43,.10); }
-.pages figcaption { font-size: .8rem; font-weight: 500; color: var(--ink2); margin-top: 6px; line-height: 1.3; }
+.pages img { border-radius: 6px; box-shadow: 0 1px 2px rgba(43,29,26,.08), 0 10px 24px rgba(43,29,26,.10); }
+.pages figcaption { font-size: .85rem; font-weight: 600; color: var(--ink2); margin-top: 8px; line-height: 1.3; }
 
 /* How to use */
 .how { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: s; }
 .how div { background: var(--cream); border-radius: 18px; padding: 20px; }
 .how img { width: 72px; height: 72px; object-fit: contain; margin-bottom: 6px; }
-.how div::before { counter-increment: s; content: "step " counter(s); display: block; font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--purple); font-weight: 600; margin-bottom: 4px; }
-.how h3 { font-size: 1.5rem; margin-bottom: 4px; }
-.how p { margin: 0; color: var(--ink2); font-size: .95rem; }
+.how div::before { counter-increment: s; content: "Step " counter(s); display: block; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--purple); font-weight: 800; margin-bottom: 4px; }
+.how h3 { font-size: 1.2rem; margin-bottom: 4px; }
+.how p { margin: 0; color: var(--ink2); font-size: .98rem; }
 
 /* Together */
 .together { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; background: var(--night); color: #fff; border-radius: 26px; padding: 36px; }
 .together h2 { color: #fff; }
-.together .intro { color: rgba(255,255,255,.8); margin-bottom: 0; }
+.together .intro { color: rgba(255,255,255,.82); margin-bottom: 0; }
 .pairs { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.pairs li { display: grid; grid-template-columns: 1fr 22px 1.3fr; gap: 8px; align-items: center; background: rgba(255,255,255,.08); border-radius: 14px; padding: 12px 14px; font-size: .95rem; }
+.pairs li { display: grid; grid-template-columns: 1fr 22px 1.3fr; gap: 8px; align-items: center; background: rgba(255,255,255,.08); border-radius: 14px; padding: 12px 14px; font-size: .98rem; }
 .pairs b { font-weight: 700; }
-.pairs i { font-style: normal; color: #b9b2ff; text-align: center; }
-.pairs span { color: rgba(255,255,255,.85); }
+.pairs i { font-style: normal; color: #C9C2FF; text-align: center; }
+.pairs span { color: rgba(255,255,255,.88); }
 .app-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; background: #fff; color: var(--night); text-decoration: none; font-weight: 800; padding: 12px 18px; border-radius: 14px; }
 .app-link img { width: 28px; height: 28px; border-radius: 7px; }
 
 .faq details { border-bottom: 1px solid var(--line); padding: 16px 0; }
-.faq summary { cursor: pointer; font-weight: 700; font-size: 1.05rem; }
+.faq summary { cursor: pointer; font-weight: 700; font-size: 1.08rem; }
 .faq p { color: var(--ink2); margin: 8px 0 0; }
 
-footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 32px 0 20px; }
+footer { text-align: center; color: var(--muted); font-size: .9rem; padding: 32px 0 20px; }
 footer a { color: var(--ink2); margin: 0 8px; }
 
 /* Sticky bar on phones */
-.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; background: rgba(255,255,255,.96); border-top: 1px solid var(--line); padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); display: none; align-items: center; gap: 12px; transform: translateY(110%); transition: transform .25s; }
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; background: rgba(255,253,249,.97); border-top: 1px solid var(--line); padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); display: none; align-items: center; gap: 12px; transform: translateY(110%); transition: transform .25s; }
 .sticky.show { transform: none; }
-.sticky div { font-size: .82rem; color: var(--ink2); line-height: 1.3; }
+.sticky div { font-size: .85rem; color: var(--ink2); line-height: 1.3; }
 .sticky div b { display: block; font-size: 1rem; color: var(--ink); }
 .sticky .btn { width: auto; flex: 1; padding: 14px; font-size: 1rem; box-shadow: 0 4px 0 #000; }
 
 /* Download sheet */
-.sheet-bg { position: fixed; inset: 0; z-index: 20; background: rgba(20,18,40,.5); display: none; align-items: flex-end; justify-content: center; }
+.sheet-bg { position: fixed; inset: 0; z-index: 20; background: rgba(30,20,18,.5); display: none; align-items: flex-end; justify-content: center; }
 .sheet-bg.open { display: flex; }
-.sheet { background: #fff; width: 100%; max-width: 460px; border-radius: 24px 24px 0 0; padding: 22px 20px calc(22px + env(safe-area-inset-bottom)); animation: up .25s ease; }
+.sheet { background: #fff; width: 100%; max-width: 460px; max-height: 94vh; overflow-y: auto; border-radius: 24px 24px 0 0; padding: 22px 20px calc(18px + env(safe-area-inset-bottom)); animation: up .25s ease; }
 @keyframes up { from { transform: translateY(40px); opacity: 0; } }
 .sheet .top { display: flex; gap: 14px; align-items: center; margin-bottom: 16px; }
-.sheet .top img { width: 64px; border-radius: 8px; border: 1px solid var(--line); }
+.sheet .top img { width: 60px; border-radius: 6px; box-shadow: 0 4px 12px rgba(43,29,26,.12); }
 .sheet h3 { font-size: 1.3rem; }
-.sheet .small { font-size: .88rem; color: var(--ink2); margin: 2px 0 0; }
+.sheet .small { font-size: .9rem; color: var(--ink2); margin: 2px 0 0; }
 .opt { display: flex; gap: 12px; align-items: flex-start; border: 2px solid var(--purple); background: var(--lav); border-radius: 16px; padding: 14px; margin-bottom: 14px; cursor: pointer; }
 .opt input { width: 22px; height: 22px; accent-color: var(--purple); margin: 2px 0 0; flex: none; }
 .opt b { display: block; }
-.opt .rec { display: inline-block; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--purple); color: #fff; padding: 2px 7px; border-radius: 6px; margin-left: 6px; vertical-align: 2px; }
-.opt span { font-size: .88rem; color: var(--ink2); }
-.prog { display: none; }
-.prog .track { height: 10px; background: var(--line); border-radius: 99px; overflow: hidden; margin: 6px 0 10px; }
-.prog .fillbar { height: 100%; width: 0; background: var(--purple); border-radius: 99px; transition: width .2s linear; }
-.prog p { margin: 0; font-weight: 700; }
-.prog .small a { color: var(--purple); }
-.close { background: none; border: 0; color: var(--muted); font: 600 .9rem "Figtree", sans-serif; width: 100%; margin-top: 10px; cursor: pointer; padding: 8px; }
+.opt .rec { display: inline-block; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--purple); color: #fff; padding: 2px 7px; border-radius: 6px; margin-left: 4px; vertical-align: 2px; }
+.opt span { font-size: .92rem; color: var(--ink2); }
+.state { display: none; }
+.state.on { display: block; }
+.status { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; margin: 0 0 6px; }
+.status .dot { width: 26px; height: 26px; border-radius: 50%; background: #E8F6EE; color: #1E9E5A; display: grid; place-items: center; font-size: .95rem; flex: none; }
+.status .spin { width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--lav); border-top-color: var(--purple); animation: spin .8s linear infinite; flex: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.note { color: var(--ink2); font-size: .95rem; margin: 0 0 14px; }
+.appcard { margin-top: 16px; background: var(--night); color: #fff; border-radius: 20px; padding: 18px; }
+.appcard .row { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+.appcard .row img { width: 52px; height: 52px; border-radius: 12px; flex: none; }
+.appcard .row b { display: block; font-size: 1.1rem; }
+.appcard .row span { font-size: .88rem; color: rgba(255,255,255,.75); }
+.appcard ul { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 6px; font-size: .95rem; color: rgba(255,255,255,.9); }
+.appcard ul li::before { content: "✓"; color: #C9C2FF; font-weight: 800; margin-right: 8px; }
+.appcard .btn { background: #fff; color: var(--ink); box-shadow: 0 4px 0 #cfc6bd; }
+.qr { display: none; gap: 14px; align-items: center; background: #fff; color: var(--ink); border-radius: 14px; padding: 12px; }
+.qr img { width: 112px; height: 112px; flex: none; }
+.qr p { margin: 0; font-size: .92rem; color: var(--ink2); }
+.qr p b { color: var(--ink); display: block; font-size: 1rem; }
+.desktop .qr { display: flex; }
+.desktop .appcard .btn.store { display: none; }
+.again { display: block; text-align: center; font-size: .9rem; color: var(--purple); font-weight: 600; margin-top: 12px; }
+.close { background: none; border: 0; color: var(--muted); font: 600 .95rem "Figtree", sans-serif; width: 100%; margin-top: 8px; cursor: pointer; padding: 8px; }
 
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 4px; }
@@ -147,14 +166,14 @@ footer a { color: var(--ink2); margin: 0 8px; }
     <section class="hero">
       <div class="shot"><img src="kit-thumbnail.webp" alt="The Winter Arc Habit Kit: a watercolor wreath cover with printable pages fanned out" width="1600" height="1200"></div>
       <div>
-        <span class="tag">free printable kit</span>
-        <h1><span class="script">Winter Arc</span>Habit Kit</h1>
+        <span class="tag">Free printable kit</span>
+        <h1><span>Winter Arc</span> Habit Kit</h1>
         <p class="lede">15 hand-painted watercolor printables to pick one habit, plan it, prove it and keep it, even with a phone in your pocket.</p>
         <div class="price"><b>$0</b><span>Free during Winter Arc</span></div>
         <div class="count" id="count"><span id="countLabel">Winter Arc ends in</span><span class="t"><i id="cd">--</i><i id="ch">--</i><i id="cm">--</i><i id="cs">--</i></span></div>
         <button class="btn" data-get>Get the free kit</button>
         <ul class="ticks">
-          <li>Instant PDF download, no sign-up</li>
+          <li>Instant PDF, no sign-up</li>
           <li>US Letter, print as many as you like</li>
           <li>Habit wheel, fill-the-jar and year-in-pixels trackers</li>
         </ul>
@@ -163,13 +182,13 @@ footer a { color: var(--ink2); margin: 0 8px; }
 
     <section class="block">
       <h2>What’s inside</h2>
-      <p class="intro">everything for one habit and one month, from choosing it to looking back on it</p>
+      <p class="intro">Everything for one habit and one month, from choosing it to looking back on it.</p>
       <div class="pages" id="pages"></div>
     </section>
 
     <section class="block">
       <h2>How to use it</h2>
-      <p class="intro">five minutes of paper a day, in this order the first time</p>
+      <p class="intro">Five minutes of paper a day. Go in this order the first time.</p>
       <div class="how">
         <div><img src="art-seedling.webp" alt=""><h3>Pick and plan</h3><p>Choose one habit on page 3. On page 4, give it a time, a place, tiny steps and a proof photo.</p></div>
         <div><img src="art-journal.webp" alt=""><h3>Do it daily</h3><p>Print page 5 thirty times. Tick the steps, stick your proof, circle your mood, write one line.</p></div>
@@ -181,9 +200,9 @@ footer a { color: var(--ink2); margin: 0 8px; }
     <section class="block">
       <div class="together">
         <div>
-          <h2><span class="script" style="color:#CFC6FF; font-size:1.2em">even better</span> with the Dear Brain app</h2>
+          <h2>Even better with the Dear Brain app</h2>
           <p class="intro">The kit is built from Dear Brain, a free iPhone app. Paper is where you plan and look back. The app guards the habit while your phone is in your hand.</p>
-          <a class="app-link" href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121"><img src="/assets/v10/icon-128.webp" alt="">Get Dear Brain free</a>
+          <a class="app-link" data-store href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121"><img src="/assets/v10/icon-128.webp" alt="">Get Dear Brain free</a>
         </div>
         <ul class="pairs">
           <li><b>📝 Habit plan</b><i>→</i><span>Pick from 100+ habits with ready-made steps</span></li>
@@ -197,10 +216,10 @@ footer a { color: var(--ink2); margin: 0 8px; }
 
     <section class="block faq">
       <h2>Questions</h2>
-      <details><summary>Is it really free?</summary><p>Yes. No payment, no email, no sign-up. Tap the button and the PDF downloads.</p></details>
+      <details><summary>Is it really free?</summary><p>Yes. No payment, no email, no sign-up.</p></details>
       <details><summary>Do I need the app to use the kit?</summary><p>No. Every page works on its own with a pen. The app is there if you want your phone to help instead of distract.</p></details>
+      <details><summary>Where does the PDF go on my iPhone?</summary><p>Into the Files app, under Downloads. Open it from there to print or to fill in with Apple Pencil.</p></details>
       <details><summary>What size are the pages?</summary><p>US Letter (8.5 × 11 in). They also print fine on A4 with “fit to page”.</p></details>
-      <details><summary>Can I print it more than once?</summary><p>Please do. Print the daily sheet and urge log as often as you need, and share the kit with a friend.</p></details>
     </section>
   </main>
 
@@ -213,23 +232,45 @@ footer a { color: var(--ink2); margin: 0 8px; }
 </div>
 
 <div class="sheet-bg" id="sheetBg" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
-  <div class="sheet">
+  <div class="sheet" id="sheet">
     <div class="top">
       <img src="pages/p01.webp" alt="">
       <div><h3 id="sheetTitle">Winter Arc Habit Kit</h3><p class="small">PDF · 15 pages · 5 MB · Free</p></div>
     </div>
-    <div id="choose">
-      <label class="opt">
+
+    <!-- 1. Choose -->
+    <div class="state on" id="sChoose">
+      <label class="opt" id="optApp">
         <input type="checkbox" id="withApp" checked>
-        <div><b>Also get the Dear Brain app <span class="rec">Recommended</span></b><span>Free on the App Store. Opens right after your download starts, so the kit and the app work together.</span></div>
+        <div><b>Also get the Dear Brain app <span class="rec">Recommended</span></b><span id="optText">Free on the App Store. It opens first, and your kit downloads when you come back.</span></div>
       </label>
       <button class="btn" id="download">Download free kit</button>
     </div>
-    <div class="prog" id="prog">
-      <p id="progText">Preparing your kit…</p>
-      <div class="track"><div class="fillbar" id="bar"></div></div>
-      <p class="small" id="progSmall">Didn’t start? <a href="winter-arc-habit-kit.pdf" download>Download again</a></p>
+
+    <!-- 2. Away at the App Store (iPhone) -->
+    <div class="state" id="sAway">
+      <p class="status"><span class="spin"></span><span id="awayTitle">Opening the App Store…</span></p>
+      <p class="note" id="awayNote">Your kit is waiting right here. Come back and tap the button below.</p>
+      <button class="btn purple" id="dlAfter">Download your kit</button>
     </div>
+
+    <!-- 3. Done -->
+    <div class="state" id="sDone">
+      <p class="status"><span class="dot">✓</span><span id="doneTitle">Your kit is downloading</span></p>
+      <p class="note" id="doneNote">Check your Downloads folder. On iPhone it’s in the Files app.</p>
+      <div class="appcard" id="appcard">
+        <div class="row"><img src="/assets/v10/icon-128.webp" alt=""><div><b>Pair it with Dear Brain</b><span>The free iPhone app this kit was made from</span></div></div>
+        <ul>
+          <li>Locks TikTok and Instagram until your habit is done</li>
+          <li>Step-by-step timer for your daily steps</li>
+          <li>Checks your proof photo, fills your calendar</li>
+        </ul>
+        <a class="btn store" data-store href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121">Get Dear Brain free</a>
+        <div class="qr"><img src="app-qr.svg" alt="QR code for Dear Brain on the App Store"><p><b>Scan with your iPhone camera</b>It opens Dear Brain on the App Store.</p></div>
+      </div>
+      <a class="again" id="again" href="winter-arc-habit-kit.pdf">Didn’t download? Open the PDF</a>
+    </div>
+
     <button class="close" id="close">Close</button>
   </div>
 </div>
@@ -238,67 +279,104 @@ footer a { color: var(--ink2); margin: 0 8px; }
 (function () {
   var APP = 'https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121';
   var PDF = 'winter-arc-habit-kit.pdf';
+  var FILE = 'Winter-Arc-Habit-Kit.pdf';
+  var ua = navigator.userAgent;
+  var ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /Android/i.test(ua);
+  var desktop = !ios && !android;
+  var $ = function (id) { return document.getElementById(id); };
+
+  // App Store links open the App Store app directly on iPhone
+  document.querySelectorAll('[data-store]').forEach(function (a) { if (ios) a.href = APP.replace('https://', 'itms-apps://'); });
 
   // What's inside
   var names = ['Cover','Dear you: how to use','Pick one habit','My habit plan','Today’s habit','My November','Habit wheel','Fill the jar','Year in pixels','Phone-free blocks','My phone rules','Scroll urge log','Camera roll of wins','Weekly review','Paper & the app'];
-  document.getElementById('pages').innerHTML = names.map(function (n, i) {
+  $('pages').innerHTML = names.map(function (n, i) {
     var k = (i + 1 < 10 ? '0' : '') + (i + 1);
     return '<figure><img loading="lazy" src="pages/p' + k + '.webp" alt="' + n + ' page" width="420" height="543"><figcaption>' + n + '</figcaption></figure>';
   }).join('');
 
-  // Countdown to the real end of Winter Arc: November 30, end of day, local time
-  var end = new Date(2026, 10, 30, 23, 59, 59);
-  var start = new Date(2026, 10, 1, 0, 0, 0);
+  // Countdown to the real start and end of Winter Arc (November 1 to 30, local time)
+  var end = new Date(2026, 10, 30, 23, 59, 59), start = new Date(2026, 10, 1, 0, 0, 0);
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
   function tick() {
-    var now = new Date(), target = now < start ? start : end, ms = target - now;
-    var count = document.getElementById('count');
-    if (now > end) { count.style.display = 'none'; return; }
-    document.getElementById('countLabel').textContent = now < start ? 'Winter Arc starts in' : 'Winter Arc ends in';
+    var now = new Date(), ms = (now < start ? start : end) - now;
+    if (now > end) { $('count').style.display = 'none'; return; }
+    $('countLabel').textContent = now < start ? 'Winter Arc starts in' : 'Winter Arc ends in';
     var s = Math.floor(ms / 1000);
-    document.getElementById('cd').textContent = Math.floor(s / 86400) + 'd';
-    document.getElementById('ch').textContent = pad(Math.floor(s % 86400 / 3600)) + 'h';
-    document.getElementById('cm').textContent = pad(Math.floor(s % 3600 / 60)) + 'm';
-    document.getElementById('cs').textContent = pad(s % 60) + 's';
+    $('cd').textContent = Math.floor(s / 86400) + 'd';
+    $('ch').textContent = pad(Math.floor(s % 86400 / 3600)) + 'h';
+    $('cm').textContent = pad(Math.floor(s % 3600 / 60)) + 'm';
+    $('cs').textContent = pad(s % 60) + 's';
   }
   tick(); setInterval(tick, 1000);
 
-  // Sticky bar shows once the main button scrolls away
-  var sticky = document.getElementById('sticky'), heroBtn = document.querySelector('.hero [data-get]');
+  // Sticky bar once the main button scrolls away
+  var sticky = $('sticky'), heroBtn = document.querySelector('.hero [data-get]');
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (e) { sticky.classList.toggle('show', !e[0].isIntersecting && e[0].boundingClientRect.top < 0); }).observe(heroBtn);
   }
 
-  // Download sheet
-  var bg = document.getElementById('sheetBg');
-  function open() { bg.classList.add('open'); document.getElementById('choose').style.display = ''; document.getElementById('prog').style.display = 'none'; }
-  function close() { bg.classList.remove('open'); }
-  document.querySelectorAll('[data-get]').forEach(function (b) { b.addEventListener('click', open); });
-  document.getElementById('close').addEventListener('click', close);
-  bg.addEventListener('click', function (e) { if (e.target === bg) close(); });
+  // Wording of the app option for each device
+  if (desktop) $('optText').textContent = 'Free on the App Store. We’ll show a QR code so you can get it on your iPhone.';
+  if (android) $('optApp').style.display = 'none';           // Dear Brain is iPhone only
+  if (desktop) $('sheet').classList.add('desktop');
+  if (android) $('appcard').style.display = 'none';
 
-  document.getElementById('download').addEventListener('click', function () {
-    var withApp = document.getElementById('withApp').checked;
-    // Start the real download
-    var a = document.createElement('a'); a.href = PDF; a.download = 'Winter-Arc-Habit-Kit.pdf';
+  // Fetch the PDF as soon as the sheet opens, so the download never leaves this page
+  var blobUrl = null, fetching = null;
+  function prefetch() {
+    if (fetching || !window.fetch || !window.URL) return;
+    fetching = fetch(PDF).then(function (r) { return r.blob(); }).then(function (b) { blobUrl = URL.createObjectURL(b); }).catch(function () {});
+  }
+  function saveKit() {
+    var a = document.createElement('a');
+    a.href = blobUrl || PDF;
+    a.download = FILE;
     document.body.appendChild(a); a.click(); a.remove();
+  }
 
-    document.getElementById('choose').style.display = 'none';
-    document.getElementById('prog').style.display = 'block';
-    var bar = document.getElementById('bar'), text = document.getElementById('progText'), p = 0;
-    var timer = setInterval(function () {
-      p = Math.min(100, p + 7);
-      bar.style.width = p + '%';
-      text.textContent = p < 100 ? 'Downloading your kit… ' + p + '%' : 'Your kit is downloaded ✓';
-      if (p >= 100) {
-        clearInterval(timer);
-        if (withApp) {
-          text.textContent = 'Kit downloaded ✓ Opening Dear Brain on the App Store…';
-          var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-          setTimeout(function () { window.location.href = ios ? APP.replace('https://', 'itms-apps://') : APP; }, 900);
+  var bg = $('sheetBg');
+  function show(id) { ['sChoose', 'sAway', 'sDone'].forEach(function (s) { $(s).classList.toggle('on', s === id); }); }
+  function openSheet() { bg.classList.add('open'); show('sChoose'); prefetch(); }
+  function closeSheet() { bg.classList.remove('open'); }
+  document.querySelectorAll('[data-get]').forEach(function (b) { b.addEventListener('click', openSheet); });
+  $('close').addEventListener('click', closeSheet);
+  bg.addEventListener('click', function (e) { if (e.target === bg) closeSheet(); });
+
+  function done() {
+    show('sDone');
+    if (desktop) { $('doneNote').textContent = 'Check your Downloads folder.'; }
+  }
+
+  $('download').addEventListener('click', function () {
+    var withApp = $('withApp').checked && !android;
+    if (withApp && ios) {
+      // App first: the App Store opens over this page, and the kit waits here
+      show('sAway');
+      window.location.href = APP.replace('https://', 'itms-apps://');
+      var back = function () {
+        if (document.visibilityState === 'visible') {
+          $('awayTitle').textContent = 'Welcome back! Your kit is ready';
+          $('awayNote').textContent = 'Tap below to save it to your phone.';
+          document.querySelector('#sAway .spin').style.display = 'none';
         }
-      }
-    }, 90);
+      };
+      document.addEventListener('visibilitychange', back);
+      setTimeout(function () { $('awayTitle').textContent = 'Your kit is ready'; $('awayNote').textContent = 'Tap below to save it to your phone.'; document.querySelector('#sAway .spin').style.display = 'none'; }, 4000);
+      return;
+    }
+    saveKit();
+    done();
+  });
+
+  $('dlAfter').addEventListener('click', function () {
+    saveKit();
+    done();
+    $('doneTitle').textContent = 'Your kit is downloading';
+    $('appcard').querySelector('.row b').textContent = 'Got Dear Brain?';
+    $('appcard').querySelector('.row span').textContent = 'Set up the same habit in the app';
+    $('appcard').querySelector('.btn.store').textContent = 'Open the App Store';
   });
 })();
 </script>
