@@ -3,373 +3,314 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The STICK Method · Dear Brain</title>
-<meta name="description" content="A 5-step, science-backed way to make one habit stick this winter, even with a phone built to distract you. Select, Time-lock, Itemize, Capture proof, Keep the record.">
+<title>The STICK Method: How to Make a Habit Survive Your Phone</title>
+<meta name="description" content="A five-step, science-backed way to make one habit stick this winter, in an age built to break it.">
 <link rel="canonical" href="https://dearbrainapp.com/stick-method/">
-<meta property="og:title" content="The STICK Method: 5 steps to make a habit survive your phone">
-<meta property="og:description" content="Your feed has a plan for your evening. Here's yours. A 4-minute, science-backed Winter Arc framework.">
-<meta property="og:image" content="https://dearbrainapp.com/assets/v10/og.jpg">
+<meta property="og:title" content="The STICK Method: How to Make a Habit Survive Your Phone">
+<meta property="og:description" content="Your feed has a plan for your evening. Here’s a better one, in five science-backed steps.">
+<meta property="og:image" content="https://dearbrainapp.com/assets/stick/og.jpg">
 <meta property="og:url" content="https://dearbrainapp.com/stick-method/">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#1f2a5c">
-<meta name="apple-itunes-app" content="app-id=6816478121, app-argument=https://dearbrainapp.com/winter-arc">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Gabarito:wght@700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap">
 <style>
 :root {
   color-scheme: light;
-  --paper: #FFFBF7; --white: #fff; --line: #F1E6DE;
-  --ink: #2B1D1A; --ink-2: #5C4A45; --muted: #74625C;
-  --night: #1f2a5c; --night-2: #45468f;
-  --lilac: #776bf6; --lilac-50: #F3F1FF;
-  --sky-ink: #0E6F9C; --sky-50: #EEF9FF;
-  --peach: #F9A279; --peach-50: #FFF5EE; --peach-ink: #B9512A;
-  --mint: #2FAE66; --mint-50: #EAF8EF;
+  --text: #242424;
+  --soft: #6b6b6b;
+  --line: #f2f2f2;
+  --accent: #1a8917;
+  --serif: "Source Serif 4", Charter, "Bitstream Charter", Georgia, Cambria, "Times New Roman", serif;
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 64px; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 "Figtree", system-ui, sans-serif; overflow-x: hidden; }
-img { max-width: 100%; display: block; }
-a { color: var(--lilac); }
-.wrap { max-width: 640px; margin: 0 auto; padding: 0 16px; }
-h1, h2, h3 { font-family: "Gabarito", system-ui, sans-serif; letter-spacing: -0.015em; line-height: 1.1; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fff; color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
 
-/* Sticky STICK bar */
-.bar { position: sticky; top: 0; z-index: 10; background: rgba(31,42,92,.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff; }
-.bar-in { max-width: 640px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.bar a.home { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font: 800 1rem "Gabarito", system-ui, sans-serif; }
-.bar a.home img { width: 26px; height: 26px; border-radius: 7px; }
-.letters { display: flex; gap: 6px; }
-.letters a { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font: 800 .95rem "Gabarito", system-ui, sans-serif; color: rgba(255,255,255,.55); background: rgba(255,255,255,.08); text-decoration: none; transition: background .25s, color .25s, transform .25s; }
-.letters a.on { background: #fff; color: var(--night); transform: translateY(-1px); }
-.letters a.done { color: #fff; background: rgba(255,255,255,.22); }
-.progress { height: 3px; background: linear-gradient(90deg, #9a8ddb, var(--peach)); width: 0; }
-
-/* Hero */
-.hero { background: linear-gradient(#1f2a5c, #45468f 60%, #9a8ddb); color: #fff; padding: 40px 0 56px; position: relative; overflow: hidden; }
-.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 36px; background: var(--paper); border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
-.snow { position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(2px 2px at 20% 30%, #fff8, transparent), radial-gradient(2px 2px at 70% 20%, #fff6, transparent), radial-gradient(1.5px 1.5px at 40% 70%, #fff7, transparent), radial-gradient(2px 2px at 85% 60%, #fff5, transparent), radial-gradient(1.5px 1.5px at 10% 80%, #fff6, transparent), radial-gradient(1.5px 1.5px at 55% 45%, #fff5, transparent); }
-.kicker { display: inline-block; font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; background: rgba(255,255,255,.14); padding: 6px 12px; border-radius: 99px; }
-.hero h1 { font-size: clamp(2.3rem, 9vw, 3.4rem); margin: 16px 0 14px; }
-.hero h1 em { font-style: normal; color: #ffd9c4; }
-.hero p { color: rgba(255,255,255,.88); font-size: 1.15rem; margin: 0 0 18px; }
-.meta { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .9rem; color: rgba(255,255,255,.75); }
+/* Top bar */
+.top { position: sticky; top: 0; z-index: 5; background: #fff; border-bottom: 1px solid var(--line); }
+.top-in { max-width: 1192px; margin: 0 auto; height: 57px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 700 1.25rem var(--serif); letter-spacing: -0.02em; }
+.brand img { width: 28px; height: 28px; border-radius: 7px; }
+.pill { background: #191919; color: #fff; text-decoration: none; font: 500 .875rem var(--sans); padding: 8px 16px; border-radius: 99px; }
+.progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--text); }
 
 /* Article */
-article { padding: 8px 0 24px; }
-.lead { font-size: 1.2rem; line-height: 1.6; }
-.lead strong { color: var(--ink); }
-.clock { font: 800 2.6rem/1 "Gabarito", system-ui, sans-serif; color: var(--night); margin: 28px 0 4px; }
-.hook { background: var(--white); border: 1.5px solid var(--line); border-left: 5px solid var(--lilac); border-radius: 16px; padding: 16px 18px; margin: 24px 0; font-weight: 600; }
-.overview { list-style: none; padding: 0; margin: 20px 0 8px; display: grid; gap: 8px; }
-.overview a { display: flex; align-items: center; gap: 14px; background: var(--white); border: 1.5px solid var(--line); border-radius: 14px; padding: 10px 14px; color: var(--ink); text-decoration: none; font-weight: 600; }
-.overview b { flex: none; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--night); color: #fff; font: 800 1.05rem "Gabarito", system-ui, sans-serif; }
-.overview span { color: var(--muted); font-weight: 500; font-size: .95rem; }
+.col { max-width: 728px; margin: 0 auto; padding: 0 24px; }
+header.post { padding-top: 48px; }
+h1 { font: 700 2.625rem/1.24 var(--sans); letter-spacing: -0.016em; margin: 0; }
+.sub { font: 400 1.375rem/1.4 var(--sans); color: var(--soft); margin: 14px 0 0; }
+.byline { display: flex; align-items: center; gap: 12px; margin: 32px 0 0; padding-bottom: 24px; border-bottom: 1px solid var(--line); font-size: .875rem; }
+.byline img { width: 44px; height: 44px; border-radius: 50%; }
+.byline b { font-weight: 500; display: block; }
+.byline span { color: var(--soft); }
 
-.step { margin-top: 56px; }
-.step-head { display: flex; align-items: center; gap: 14px; }
-.big { flex: none; width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; background: var(--night); color: #fff; font: 800 2.2rem "Gabarito", system-ui, sans-serif; box-shadow: 0 6px 0 #11183a; }
-.step-head small { display: block; color: var(--muted); font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
-.step h2 { font-size: clamp(1.7rem, 6.5vw, 2.1rem); margin: 2px 0 0; }
-.step > p { margin: 16px 0; }
+figure { margin: 40px 0; }
+figure img { width: 100%; }
+figcaption { font: 400 .875rem/1.4 var(--sans); color: var(--soft); text-align: center; margin-top: 10px; }
 
-.science { background: var(--sky-50); border-radius: 18px; padding: 16px 18px; margin: 18px 0; }
-.science h3, .do h3 { font-family: "Figtree", system-ui, sans-serif; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 6px; }
-.science h3 { color: var(--sky-ink); }
-.science p { margin: 0; }
-.science p + p { margin-top: 10px; }
-.stat { display: flex; gap: 14px; align-items: baseline; margin: 6px 0 10px; }
-.stat b { font: 800 2.4rem/1 "Gabarito", system-ui, sans-serif; color: var(--sky-ink); }
-.stat span { font-size: .95rem; color: var(--ink-2); }
-cite { font-style: normal; font-size: .85rem; color: var(--muted); }
+.body p, .body li { font: 400 1.25rem/1.6 var(--serif); letter-spacing: -0.003em; }
+.body p { margin: 1.6em 0 0; }
+.body h2 + p, .body figure + p, .body .kicker + h2 + p { margin-top: .86em; }
+.body h2 { font: 700 1.5rem/1.25 var(--sans); letter-spacing: -0.016em; margin: 2.2em 0 0; }
+.body .kicker { font: 600 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin: 3.2em 0 0; }
+.body .kicker + h2 { margin-top: .3em; }
+.body ul, .body ol { margin: 1.2em 0 0; padding-left: 1.6em; }
+.body li { margin-top: .5em; padding-left: .2em; }
+.body strong { font-weight: 700; }
+sup a { font: 600 .7rem var(--sans); color: var(--soft); text-decoration: none; padding: 0 1px; }
 
-.do { background: var(--peach-50); border-radius: 18px; padding: 16px 18px; margin: 18px 0; }
-.do h3 { color: var(--peach-ink); }
-.do ul { margin: 0; padding-left: 20px; }
-.do li + li { margin-top: 6px; }
-.formula { display: block; background: var(--white); border: 1.5px dashed var(--peach); border-radius: 12px; padding: 12px 14px; margin: 10px 0 4px; font-weight: 700; }
-.formula i { font-style: normal; color: var(--peach-ink); }
+blockquote { margin: 2.2em 0 0; padding-left: 20px; border-left: 3px solid var(--text); }
+blockquote p { font-style: italic; margin: 0 !important; }
+.body .pull { margin: 2.4em 0 0; font: italic 400 1.75rem/1.4 var(--serif); color: var(--soft); text-align: center; letter-spacing: -0.01em; }
+.body .big-num { font: 700 4rem/1 var(--serif); letter-spacing: -0.03em; margin: 1em 0 0; }
+.body .big-num + p { margin-top: .3em !important; }
+.try { margin: 1.4em 0 0; padding: 18px 22px; background: #f9f9f9; border-radius: 4px; }
+.try p { margin: 0 !important; }
+.try .label { font: 600 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin-bottom: 4px !important; }
+.body .sep { text-align: center; letter-spacing: 1.2em; font: 400 1.5rem var(--serif); color: var(--text); margin: 2.4em 0 0; padding-left: 1.2em; }
 
-.next { color: var(--muted); font-weight: 600; font-style: italic; margin-top: 18px; }
-.next::before { content: "↓ "; font-style: normal; }
+/* App card */
+.app { margin: 48px 0 0; border: 1px solid #e6e6e6; border-radius: 8px; padding: 24px; display: grid; grid-template-columns: 64px 1fr; gap: 16px 18px; align-items: center; }
+.app img { width: 64px; height: 64px; border-radius: 15px; }
+.app h3 { font: 700 1.125rem/1.3 var(--sans); margin: 0; }
+.app p { font: 400 .95rem/1.45 var(--sans); color: var(--soft); margin: 2px 0 0; }
+.app a { grid-column: 1 / -1; display: block; text-align: center; background: #191919; color: #fff; text-decoration: none; font: 600 1rem var(--sans); padding: 14px; border-radius: 99px; }
+.app small { grid-column: 1 / -1; text-align: center; color: var(--soft); font-size: .8rem; margin-top: -6px; }
 
-.winter { background: linear-gradient(135deg, #1f2a5c, #45468f); color: #fff; border-radius: 24px; padding: 24px 20px; margin: 56px 0 0; }
-.winter h2 { font-size: 1.7rem; margin: 0 0 10px; }
-.winter p { margin: 0 0 10px; color: rgba(255,255,255,.9); }
-.curve { width: 100%; height: auto; margin: 12px 0 6px; }
+.refs { margin: 56px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
+.refs h4 { font: 600 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin: 0 0 8px; }
+.refs ol { margin: 0; padding-left: 1.4em; }
+.refs li { font: 400 .875rem/1.5 var(--sans); color: var(--soft); margin: 6px 0; }
+.refs li:target { color: var(--text); }
 
-/* App reveal */
-.reveal { margin-top: 64px; text-align: center; }
-.reveal h2 { font-size: clamp(1.9rem, 7.5vw, 2.5rem); margin: 0 0 10px; }
-.reveal > p { color: var(--ink-2); margin: 0 auto; max-width: 30em; }
-.shots { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 22px 16px 10px; margin: 0 -16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-.shots::-webkit-scrollbar { display: none; }
-.shot { flex: none; width: 72%; max-width: 250px; scroll-snap-align: center; background: var(--white); border: 1.5px solid var(--line); border-radius: 22px; padding: 14px 12px 16px; text-align: left; }
-.shot img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: contain; background: var(--lilac-50); border-radius: 14px; }
-.shot b { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: var(--night); color: #fff; font: 800 .95rem "Gabarito", system-ui, sans-serif; margin: 12px 0 4px; }
-.shot h3 { font-family: "Figtree", system-ui, sans-serif; font-size: 1.05rem; margin: 2px 0 2px; }
-.shot p { margin: 0; font-size: .92rem; color: var(--ink-2); line-height: 1.45; }
-.swipe { font-size: .85rem; color: var(--muted); }
+footer { margin-top: 64px; padding: 32px 24px 48px; border-top: 1px solid var(--line); text-align: center; font-size: .875rem; color: var(--soft); }
+footer a { margin: 0 8px; color: var(--soft); }
 
-.cta { background: var(--white); border: 1.5px solid var(--line); border-radius: 26px; padding: 26px 20px; margin: 28px 0 0; text-align: center; box-shadow: 0 14px 40px rgba(43,29,26,.08); }
-.cta img.mascot { width: 120px; height: auto; margin: -70px auto 6px; }
-.cta h2 { font-size: 1.8rem; margin: 0 0 8px; }
-.cta p { margin: 0 0 18px; color: var(--ink-2); }
-.button { display: block; text-align: center; background: #1c1c22; color: #fff; text-decoration: none; font: 700 1.15rem "Figtree", system-ui, sans-serif; padding: 17px; border-radius: 18px; box-shadow: 0 5px 0 #000; transition: transform .1s, box-shadow .1s; }
-.button:active { transform: translateY(4px); box-shadow: 0 1px 0 #000; }
-.fine { font-size: .85rem; color: var(--muted); margin-top: 12px !important; }
-
-.refs { margin-top: 48px; font-size: .85rem; color: var(--muted); }
-.refs summary { cursor: pointer; font-weight: 700; color: var(--ink-2); }
-.refs ol { padding-left: 20px; }
-.refs li { margin: 6px 0; }
-
-footer { margin: 40px 0 0; padding: 24px 16px 40px; text-align: center; color: var(--muted); font-size: .9rem; border-top: 1.5px solid var(--line); }
-footer a { color: var(--ink-2); margin: 0 8px; }
-
-.fade { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-.fade.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .fade { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+@media (max-width: 728px) {
+  .top-in { padding: 0 16px; }
+  .col { padding: 0 20px; }
+  header.post { padding-top: 32px; }
+  h1 { font-size: 2rem; line-height: 1.25; }
+  .sub { font-size: 1.2rem; }
+  .body p, .body li { font-size: 1.125rem; line-height: 1.58; }
+  .body h2 { font-size: 1.375rem; }
+  .body .pull { font-size: 1.45rem; }
+  .body .big-num { font-size: 3.2rem; }
+  figure.wide { margin-left: -20px; margin-right: -20px; }
+  figure.wide figcaption { padding: 0 20px; }
+}
 </style>
 </head>
 <body>
 
-<nav class="bar" aria-label="Steps">
-  <div class="bar-in">
-    <a class="home" href="/"><img src="/assets/apple-touch-icon.png" alt="">Dear Brain</a>
-    <div class="letters">
-      <a href="#s" data-step="s" aria-label="Step 1: Select">S</a>
-      <a href="#t" data-step="t" aria-label="Step 2: Time-lock">T</a>
-      <a href="#i" data-step="i" aria-label="Step 3: Itemize">I</a>
-      <a href="#c" data-step="c" aria-label="Step 4: Capture proof">C</a>
-      <a href="#k" data-step="k" aria-label="Step 5: Keep the record">K</a>
-    </div>
+<nav class="top">
+  <div class="top-in">
+    <a class="brand" href="/"><img src="/assets/apple-touch-icon.png" alt="">Dear Brain</a>
+    <a class="pill" href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121">Get the app</a>
   </div>
   <div class="progress" id="progress"></div>
 </nav>
 
-<header class="hero">
-  <div class="snow" aria-hidden="true"></div>
-  <div class="wrap" style="position:relative">
-    <span class="kicker">❄️ Winter Arc framework</span>
-    <h1>Your phone has a plan for your evening. <em>Here’s yours.</em></h1>
-    <p>The STICK Method: five science-backed steps to make one habit stick this winter, in an age built to break it.</p>
-    <div class="meta"><span>⏱ 4 min read</span><span>🧠 12 studies</span><span>✅ 5 steps</span></div>
-  </div>
-</header>
-
-<main class="wrap">
+<main class="col">
 <article>
-
-  <p class="clock">1:12 AM</p>
-  <p class="lead">You meant to read. Or run. Or journal. You picked up your phone “for one thing,” and an hour is gone. <strong>That’s not a willpower problem.</strong> It’s a design problem.</p>
-  <p>Feeds run on the oldest habit loop in psychology: a cue (the buzz), a routine (the scroll) and an unpredictable reward (the next post might be great). Unpredictable rewards are the hardest habits to quit. Slot machines work the same way.</p>
-  <p>So instead of fighting a machine with motivation, give your habit the same structure the feed has. That’s the whole idea behind STICK.</p>
-
-  <div class="hook fade">In one study, a single sentence took people from 35% follow-through to 91%. You’ll write that sentence in Step 2. And Step 4 is the one almost everyone skips.</div>
-
-  <ul class="overview">
-    <li><a href="#s"><b>S</b>Select one tiny habit</a></li>
-    <li><a href="#t"><b>T</b>Time-lock it</a></li>
-    <li><a href="#i"><b>I</b>Itemize it into a to-do list</a></li>
-    <li><a href="#c"><b>C</b>Capture proof</a></li>
-    <li><a href="#k"><b>K</b>Keep the record</a></li>
-  </ul>
-
-  <!-- S -->
-  <section class="step fade" id="s" data-step="s">
-    <div class="step-head"><div class="big">S</div><div><small>Step 1 of 5</small><h2>Select one tiny habit</h2></div></div>
-    <p>Not five. One. And smaller than feels impressive.</p>
-    <div class="science">
-      <h3>🔬 The science</h3>
-      <p>Behaviour happens when motivation, ability and a prompt meet at the same moment (Fogg’s behaviour model). Motivation swings day to day. Ability you can control: make the habit so small it still happens on your worst day.</p>
-      <p>When researchers tracked people building a new daily habit, simple ones like drinking water became automatic faster than demanding ones like 50 sit-ups. <cite>(Lally et al., 2010)</cite></p>
+  <header class="post">
+    <h1>The STICK Method: How to Make a Habit Survive Your Phone</h1>
+    <p class="sub">Your feed has a plan for your evening. Here’s a better one, in five steps backed by research.</p>
+    <div class="byline">
+      <img src="/assets/apple-touch-icon.png" alt="">
+      <div><b>Dear Brain</b><span>6 min read · Oct 31, 2026</span></div>
     </div>
-    <div class="do">
-      <h3>✍️ Do this</h3>
-      <ul>
-        <li>Pick the one habit that would make the biggest difference this winter.</li>
-        <li>Shrink it until it takes 2 to 20 minutes. “Read 10 pages,” not “read more.”</li>
-      </ul>
-    </div>
-    <p class="next">Next: the sentence that nearly tripled follow-through.</p>
-  </section>
+  </header>
 
-  <!-- T -->
-  <section class="step fade" id="t" data-step="t">
-    <div class="step-head"><div class="big">T</div><div><small>Step 2 of 5</small><h2>Time-lock it</h2></div></div>
-    <p>“I’ll do it later” is how the feed wins. Later has no cue. Your notifications do.</p>
-    <div class="science">
-      <h3>🔬 The science</h3>
-      <div class="stat"><b>91%</b><span>exercised when they wrote <em>when and where</em>, vs 35–38% who only got motivation or nothing. <cite>(Milne, Orbell &amp; Sheeran, 2002)</cite></span></div>
-      <p>These “if–then” plans, called implementation intentions, had a medium-to-large effect across 94 studies. <cite>(Gollwitzer &amp; Sheeran, 2006)</cite> They work because about 43% of what we do each day is repeated in the same context, often on autopilot. <cite>(Wood et al., 2002)</cite> A fixed time becomes the cue.</p>
-      <p>Just having your phone in sight reduces available brainpower, even when it’s face down. <cite>(Ward et al., 2017)</cite> So the window needs guarding, not just scheduling.</p>
-    </div>
-    <div class="do">
-      <h3>✍️ Do this</h3>
-      <span class="formula">When it’s <i>[time]</i> at <i>[place]</i>, I will <i>[habit]</i>.</span>
-      <ul>
-        <li>Pick the same time every day, tied to something that already happens (after coffee, after work).</li>
-        <li>For that window, lock the apps that pull you away. Remove the competing cue.</li>
-      </ul>
-    </div>
-    <p class="next">Next: why a blank habit is harder to start than a list.</p>
-  </section>
+  <figure class="wide">
+    <img src="/assets/stick/hero.webp" alt="A person reading in an armchair by a snowy window, phone face down on the table" width="1400" height="933">
+  </figure>
 
-  <!-- I -->
-  <section class="step fade" id="i" data-step="i">
-    <div class="step-head"><div class="big">I</div><div><small>Step 3 of 5</small><h2>Itemize it into a to-do list</h2></div></div>
-    <p>“Journal” is foggy. “Open notebook, write the date, three lines about yesterday” is a plan your brain can start.</p>
-    <div class="science">
-      <h3>🔬 The science</h3>
-      <p>Unfinished goals keep nagging at your mind. Making a specific plan for them quiets that noise and frees up attention, even before you act. <cite>(Masicampo &amp; Baumeister, 2011)</cite></p>
-      <p>And of everything that lifts people’s motivation during a day, the biggest is making progress, even small progress. <cite>(Amabile &amp; Kramer, 2011)</cite> Every ticked box is a tiny win.</p>
-    </div>
-    <div class="do">
-      <h3>✍️ Do this</h3>
-      <ul>
-        <li>Break the habit into 3–4 steps, each with a few minutes on the clock.</li>
-        <li>Make step one physical and silly-easy: “put on shoes,” “open the book.”</li>
-      </ul>
-    </div>
-    <p class="next">Next: the step almost everyone skips.</p>
-  </section>
+  <div class="body">
+    <p>It’s 1:12 AM. You meant to read tonight. Or stretch. Or write three lines in that journal you bought in September. Instead you picked up your phone “for one thing,” and an hour quietly disappeared.</p>
 
-  <!-- C -->
-  <section class="step fade" id="c" data-step="c">
-    <div class="step-head"><div class="big">C</div><div><small>Step 4 of 5</small><h2>Capture proof</h2></div></div>
-    <p>Here it is. Most habit plans run on the honour system, and your brain is a generous judge. “Basically did it” slowly becomes “didn’t do it.”</p>
-    <div class="science">
-      <h3>🔬 The science</h3>
-      <p>A review of 138 studies found that monitoring your progress raises your chances of reaching a goal, and the effect is stronger when progress is physically recorded or shown to someone. <cite>(Harkin et al., 2016)</cite></p>
-      <p>Commitment devices work for the same reason: when present-you sets a rule future-you can’t wriggle out of, people follow through more. <cite>(Ariely &amp; Wertenbroch, 2002)</cite></p>
-    </div>
-    <div class="do">
-      <h3>✍️ Do this</h3>
-      <ul>
-        <li>Decide now what “done” looks like: the open book, the running shoes by the door, the clean kitchen.</li>
-        <li>Snap a photo of it every time. No photo, not done.</li>
-      </ul>
-    </div>
-    <p class="next">Next: turn today into a streak you won’t want to break.</p>
-  </section>
+    <p>If that sounds familiar, I want to say something first: <strong>this is not a willpower problem.</strong></p>
 
-  <!-- K -->
-  <section class="step fade" id="k" data-step="k">
-    <div class="step-head"><div class="big">K</div><div><small>Step 5 of 5</small><h2>Keep the record</h2></div></div>
-    <p>Two parts: write one line about it, then mark the day on a calendar.</p>
-    <div class="science">
-      <h3>🔬 The science</h3>
-      <div class="stat"><b>+23%</b><span>better performance for trainees who spent 15 minutes at the end of the day writing what they learned. <cite>(Di Stefano et al., 2014)</cite></span></div>
-      <p>A visible chain of marked days pulls you forward. People speed up as they see themselves getting closer to a goal, the goal-gradient effect. <cite>(Kivetz et al., 2006)</cite></p>
-      <p>And the good news: missing one day did not undo habit formation in the research. <cite>(Lally et al., 2010)</cite> Missing two in a row is where it slips.</p>
-    </div>
-    <div class="do">
-      <h3>✍️ Do this</h3>
-      <ul>
-        <li>Write one line: what you did, how it felt, one thing for tomorrow.</li>
-        <li>Mark the day. Keep the calendar where you’ll see it.</li>
-        <li>Rule: never miss twice.</li>
-      </ul>
-    </div>
-  </section>
+    <p>Your feed runs on one of the oldest loops in psychology. A cue (the buzz), a routine (the scroll), and a reward you can’t predict (the next post <em>might</em> be the good one). Unpredictable rewards build the stickiest habits we know of. It’s the same reason slot machines don’t pay out on a schedule.</p>
 
-  <section class="winter fade">
-    <h2>❄️ Why winter, why now</h2>
-    <p>In the habit study, it took a median of 66 days for a habit to feel automatic. But the curve is steepest at the start: the early repetitions do the most work.</p>
-    <svg class="curve" viewBox="0 0 320 120" role="img" aria-label="Habit automaticity rises fastest in the first weeks, then levels off">
-      <rect x="0" y="0" width="96" height="120" rx="8" fill="rgba(255,255,255,.12)"/>
-      <text x="48" y="16" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="Figtree, sans-serif">NOVEMBER</text>
-      <line x1="8" y1="104" x2="312" y2="104" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
-      <path d="M8 104 C 50 50, 110 34, 312 26" fill="none" stroke="#ffd9c4" stroke-width="4" stroke-linecap="round"/>
-      <text x="312" y="118" text-anchor="end" fill="rgba(255,255,255,.7)" font-size="10" font-family="Figtree, sans-serif">day 66</text>
-      <text x="8" y="118" fill="rgba(255,255,255,.7)" font-size="10" font-family="Figtree, sans-serif">day 1</text>
-      <text x="200" y="20" fill="rgba(255,255,255,.85)" font-size="10" font-family="Figtree, sans-serif">feels automatic</text>
-    </svg>
-    <p>Long nights pull everyone toward the couch and the feed. That’s exactly why a Winter Arc works: build the base now, and you walk into the new year with a habit already running.</p>
-  </section>
+    <p>So here’s the idea behind this piece. Instead of fighting a machine with motivation, we give our own habit the same structure the feed has: a clear cue, an easy routine, and a reward we can see.</p>
 
-  <!-- Reveal -->
-  <section class="reveal fade" id="app">
-    <h2>Five steps. One app.</h2>
-    <p>You could run STICK with a notebook, an alarm, a timer, a camera roll and a wall calendar. Or you could use Dear Brain, where we packed all five into one place.</p>
-    <div class="shots">
-      <div class="shot"><img loading="lazy" src="/assets/v10/phone-widgets.webp" alt="Today's habits and streak on the Home Screen"><b>S</b><h3>Pick from 100+ habits</h3><p>Ready-made tiny habits, or make your own. Today’s list sits on your Home Screen.</p></div>
-      <div class="shot"><img loading="lazy" src="/assets/v10/phone-schedule.webp" alt="Scheduled habits with locked apps"><b>T</b><h3>Time-locked, apps locked</h3><p>Your habit gets a time. TikTok, Instagram and YouTube lock until it’s done.</p></div>
-      <div class="shot"><img loading="lazy" src="/assets/v10/phone-timer.webp" alt="Step-by-step habit timer"><b>I</b><h3>Step-by-step timer</h3><p>Your to-do list with a clock on each step.</p></div>
-      <div class="shot"><img loading="lazy" src="/assets/v10/phone-proof.webp" alt="Photo proof screen"><b>C</b><h3>Photo proof</h3><p>Snap it, Dear Brain checks it, your apps unlock. No skip button.</p></div>
-      <div class="shot"><img loading="lazy" src="/assets/v10/phone-journal.webp" alt="Habit journal with mood and notes"><b>K</b><h3>Journal and streaks</h3><p>A line and a mood for every habit, plus a calendar that fills in.</p></div>
-      <div class="shot"><img loading="lazy" src="/assets/screens/stats-year.webp" alt="Yearly habit calendar"><b>K</b><h3>Your year, marked</h3><p>Watch the days fill in. Never miss twice.</p></div>
+    <p>I call it <strong>STICK</strong>. Five steps, each one built on research you can check. One of them involves a single sentence that took people from 35% follow-through to 91%. Another is the step almost everyone skips, and it’s the one that matters most.</p>
+
+    <p class="kicker">Step 1</p>
+    <h2>S — Select one tiny habit</h2>
+    <figure>
+      <img loading="lazy" src="/assets/stick/select.webp" alt="One seedling growing in a pot beside a row of empty pots on a frosty windowsill" width="1400" height="933">
+      <figcaption>Start with one pot. The others can wait.</figcaption>
+    </figure>
+    <p>Not five habits. One. And smaller than feels impressive.</p>
+
+    <p>Stanford researcher BJ Fogg describes behaviour as three things meeting at the same moment: motivation, ability, and a prompt.<sup><a href="#r1">1</a></sup> Motivation is the unreliable one. It’s high on Sunday night and gone by Wednesday. Ability is the one you control. Make the habit so small that it still happens on your worst day.</p>
+
+    <p>The research backs this up. When psychologists at University College London followed people building a new daily habit, simple ones like drinking a glass of water became automatic faster than demanding ones like doing 50 sit-ups.<sup><a href="#r2">2</a></sup></p>
+
+    <div class="try">
+      <p class="label">Try this</p>
+      <p>Pick the one habit that would change your winter most. Then shrink it until it takes under 20 minutes. “Read 10 pages,” not “read more.”</p>
     </div>
-    <p class="swipe">Swipe →</p>
 
-    <div class="cta" style="margin-top:72px">
-      <img class="mascot" src="/assets/v10/mascot-cheer.webp" alt="" width="560" height="516">
-      <h2>Start your Winter Arc today</h2>
-      <p>Pick one habit. Lock it to a time. Prove it. Mark it. Dear Brain is free to try, and the Winter Arc challenge runs November 1 to 30.</p>
-      <a class="button" href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121">Try Dear Brain free</a>
-      <p class="fine">iPhone · No ads, no tracking · <a href="/winter-arc/">About Winter Arc</a></p>
+    <p class="kicker">Step 2</p>
+    <h2>T — Time-lock it</h2>
+    <figure>
+      <img loading="lazy" src="/assets/stick/timelock.webp" alt="A clock at seven above a bench with running shoes waiting by the door" width="1400" height="933">
+      <figcaption>The cue is set the night before. The shoes are already waiting.</figcaption>
+    </figure>
+    <p>“I’ll do it later” is how the feed wins. <em>Later</em> has no cue. Your notifications do.</p>
+
+    <p>In 2002, researchers asked a group of people to exercise more. One group just got information about why exercise matters. Another got the same information plus one extra instruction: write down exactly <em>when</em> and <em>where</em> you’ll exercise next week.</p>
+
+    <p class="big-num">91%</p>
+    <p>of the people who wrote that sentence exercised. In the other groups, it was 35 to 38%.<sup><a href="#r3">3</a></sup></p>
+
+    <p>Psychologists call these “if–then” plans <em>implementation intentions</em>, and a review of 94 studies found they have a medium-to-large effect on reaching goals.<sup><a href="#r4">4</a></sup> They work because so much of life already runs on context. One diary study found that about 43% of what people do each day is repeated in the same place, usually while thinking about something else.<sup><a href="#r5">5</a></sup> A fixed time and place becomes the cue that starts the habit for you.</p>
+
+    <p>There’s a second half to this step. Researchers found that just having your smartphone on the desk, face down and silent, reduces how much attention you have to work with.<sup><a href="#r6">6</a></sup> So the window doesn’t just need scheduling. It needs guarding.</p>
+
+    <div class="try">
+      <p class="label">Try this</p>
+      <p>Write it out: <strong>“When it’s [time] at [place], I will [habit].”</strong> Tie it to something that already happens, like after your morning coffee. For that window, put the phone in another room, or lock the apps that pull you away.</p>
     </div>
-  </section>
 
-  <details class="refs">
-    <summary>The research behind STICK</summary>
+    <p class="kicker">Step 3</p>
+    <h2>I — Itemize it into a to-do list</h2>
+    <figure>
+      <img loading="lazy" src="/assets/stick/itemize.webp" alt="A short checklist with two items ticked, a pencil and a cup of tea on a desk" width="1400" height="933">
+      <figcaption>Two ticks in, the third one feels easy.</figcaption>
+    </figure>
+    <p>“Journal” is foggy. “Open the notebook, write the date, write three lines about yesterday” is something your brain can actually start.</p>
+
+    <p>Unfinished goals have a way of nagging at you. A 2011 study found that simply making a specific plan for a goal quiets those intrusive thoughts and frees up your attention, even before you’ve done anything.<sup><a href="#r7">7</a></sup></p>
+
+    <p>And there’s a bonus. When Harvard researchers studied nearly 12,000 diary entries from people at work, the thing that lifted their mood and motivation most was making progress, even small progress.<sup><a href="#r8">8</a></sup> Every box you tick is a small win your brain notices.</p>
+
+    <div class="try">
+      <p class="label">Try this</p>
+      <p>Break the habit into three or four small steps, each with a few minutes on the clock. Make the first one physical and almost silly: “put on shoes,” “open the book.”</p>
+    </div>
+
+    <p class="pull">“The hardest part of any habit is the first thirty seconds. So make them easy.”</p>
+
+    <p class="kicker">Step 4</p>
+    <h2>C — Capture proof</h2>
+    <figure>
+      <img loading="lazy" src="/assets/stick/proof.webp" alt="Hands taking a phone photo of an open notebook next to a cup of coffee" width="1400" height="933">
+      <figcaption>Done isn’t a feeling. It’s a photo.</figcaption>
+    </figure>
+    <p>Here’s the step almost everyone skips.</p>
+
+    <p>Most habit plans run on the honour system, and your brain is a very generous judge. “I basically did it” slowly turns into “I didn’t do it,” and you don’t notice the change until the habit is gone.</p>
+
+    <p>A review of 138 studies looked at what happens when people monitor their progress toward a goal. Monitoring helped. But it helped <em>more</em> when the progress was physically recorded, or shown to someone else.<sup><a href="#r9">9</a></sup> Evidence beats memory.</p>
+
+    <p>There’s a related idea in behavioural economics called a commitment device: a rule you set today that future-you can’t easily wriggle out of. In one well-known study, students who set binding deadlines for themselves did better than students with total freedom.<sup><a href="#r10">10</a></sup> A proof rule is a commitment device. You decide in advance what counts as done.</p>
+
+    <div class="try">
+      <p class="label">Try this</p>
+      <p>Decide now what “done” looks like. The open book. The running shoes, muddy. The clean kitchen. Take a photo every time. No photo, not done.</p>
+    </div>
+
+    <p class="kicker">Step 5</p>
+    <h2>K — Keep the record</h2>
+    <figure>
+      <img loading="lazy" src="/assets/stick/record.webp" alt="A wall calendar with a long chain of days marked off, snow falling outside the window" width="1400" height="933">
+      <figcaption>After a week, the chain starts motivating you on its own.</figcaption>
+    </figure>
+    <p>This last step has two small parts: write one line about what you did, then mark the day on a calendar.</p>
+
+    <p>The writing matters more than it sounds. In a study at a large call centre, new employees who spent the last 15 minutes of their day writing about what they’d learned performed 23% better on a final test than those who didn’t.<sup><a href="#r11">11</a></sup> One line turns “something I did” into “something I learned about myself.”</p>
+
+    <p>The calendar matters too. Researchers studying coffee-shop loyalty cards found that people bought coffee faster the closer they got to a free one.<sup><a href="#r12">12</a></sup> It’s called the goal-gradient effect, and a growing chain of marked days does the same thing to you.</p>
+
+    <p>And the kindest finding of all: in the UCL habit study, missing a single day didn’t undo anyone’s progress.<sup><a href="#r2">2</a></sup> One slip is fine. The rule that protects you is simple.</p>
+
+    <blockquote><p>Never miss twice.</p></blockquote>
+
+    <div class="try">
+      <p class="label">Try this</p>
+      <p>Every time you finish, write one line: what you did, how it felt, one thing for tomorrow. Then mark the day somewhere you’ll see it.</p>
+    </div>
+
+    <p class="sep">···</p>
+
+    <h2>Why winter is the right time</h2>
+    <figure>
+      <img loading="lazy" src="/assets/stick/curve.webp" alt="A person with a lantern walking up a steep snowy path toward a warm cabin at the top" width="1400" height="933">
+      <figcaption>The path is steepest at the start. That’s where the progress is.</figcaption>
+    </figure>
+    <p>In that same UCL study, it took people a median of 66 days for a new habit to feel automatic.<sup><a href="#r2">2</a></sup> That can sound discouraging until you see the shape of it: the biggest gains come in the first few weeks. Every early repetition does more work than a later one.</p>
+
+    <p>Winter is when long, dark evenings pull all of us toward the couch and the feed. Which is exactly why it’s the best time to start. Build the base now, through November, and you walk into the new year with a habit that’s already running instead of a resolution that hasn’t started.</p>
+
+    <p>So, quickly, one more time:</p>
     <ol>
-      <li>Fogg, B. J. (2009). A behavior model for persuasive design. <i>Persuasive Technology</i>.</li>
-      <li>Lally, P., van Jaarsveld, C., Potts, H., &amp; Wardle, J. (2010). How are habits formed. <i>European Journal of Social Psychology</i>, 40(6).</li>
-      <li>Milne, S., Orbell, S., &amp; Sheeran, P. (2002). Combining motivational and volitional interventions to promote exercise participation. <i>British Journal of Health Psychology</i>, 7(2).</li>
-      <li>Gollwitzer, P. M., &amp; Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis. <i>Advances in Experimental Social Psychology</i>, 38.</li>
-      <li>Wood, W., Quinn, J. M., &amp; Kashy, D. A. (2002). Habits in everyday life. <i>Journal of Personality and Social Psychology</i>, 83(6).</li>
-      <li>Ward, A. F., Duke, K., Gneezy, A., &amp; Bos, M. W. (2017). Brain drain: The mere presence of one’s own smartphone reduces available cognitive capacity. <i>Journal of the Association for Consumer Research</i>, 2(2).</li>
-      <li>Masicampo, E. J., &amp; Baumeister, R. F. (2011). Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals. <i>Journal of Personality and Social Psychology</i>, 101(4).</li>
-      <li>Amabile, T., &amp; Kramer, S. (2011). <i>The Progress Principle</i>. Harvard Business Review Press.</li>
-      <li>Harkin, B., et al. (2016). Does monitoring goal progress promote goal attainment? A meta-analysis. <i>Psychological Bulletin</i>, 142(2).</li>
-      <li>Ariely, D., &amp; Wertenbroch, K. (2002). Procrastination, deadlines, and performance. <i>Psychological Science</i>, 13(3).</li>
-      <li>Di Stefano, G., Gino, F., Pisano, G., &amp; Staats, B. (2014). Making experience count: The role of reflection in individual learning. <i>Harvard Business School Working Paper</i> 14-093.</li>
-      <li>Kivetz, R., Urminsky, O., &amp; Zheng, Y. (2006). The goal-gradient hypothesis resurrected. <i>Journal of Marketing Research</i>, 43(1).</li>
+      <li><strong>Select</strong> one tiny habit.</li>
+      <li><strong>Time-lock</strong> it to a when and a where.</li>
+      <li><strong>Itemize</strong> it into a short to-do list.</li>
+      <li><strong>Capture</strong> proof that it’s done.</li>
+      <li><strong>Keep</strong> the record: one line, one mark.</li>
     </ol>
-  </details>
 
+    <p>You can do all of this with a notebook, an alarm, a timer, your camera roll and a paper calendar. Honestly, that works.</p>
+
+    <p>But we got tired of juggling five tools, so we built one. <strong>Dear Brain</strong> is the STICK Method in a single app. You pick a habit and give it a time. When that time comes, the apps that distract you lock until it’s done. A step-by-step timer walks you through it. A photo proves it. Then you write a line, and the calendar fills in.</p>
+
+    <p>It’s free to try. If this piece made sense to you, start tonight with one tiny habit.</p>
+  </div>
+
+  <div class="app">
+    <img src="/assets/v10/icon-128.webp" alt="Dear Brain app icon" width="64" height="64">
+    <div>
+      <h3>Dear Brain</h3>
+      <p>Habits first, feeds later. The STICK Method in one app.</p>
+    </div>
+    <a href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121">Get the app — it’s free</a>
+    <small>For iPhone · No ads, no tracking</small>
+  </div>
+
+  <section class="refs">
+    <h4>References</h4>
+    <ol>
+      <li id="r1">Fogg, B. J. (2009). A behavior model for persuasive design. <i>Proceedings of Persuasive Technology</i>.</li>
+      <li id="r2">Lally, P., van Jaarsveld, C., Potts, H., &amp; Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. <i>European Journal of Social Psychology</i>, 40(6).</li>
+      <li id="r3">Milne, S., Orbell, S., &amp; Sheeran, P. (2002). Combining motivational and volitional interventions to promote exercise participation. <i>British Journal of Health Psychology</i>, 7(2).</li>
+      <li id="r4">Gollwitzer, P. M., &amp; Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis. <i>Advances in Experimental Social Psychology</i>, 38.</li>
+      <li id="r5">Wood, W., Quinn, J. M., &amp; Kashy, D. A. (2002). Habits in everyday life. <i>Journal of Personality and Social Psychology</i>, 83(6).</li>
+      <li id="r6">Ward, A. F., Duke, K., Gneezy, A., &amp; Bos, M. W. (2017). Brain drain: The mere presence of one’s own smartphone reduces available cognitive capacity. <i>Journal of the Association for Consumer Research</i>, 2(2).</li>
+      <li id="r7">Masicampo, E. J., &amp; Baumeister, R. F. (2011). Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals. <i>Journal of Personality and Social Psychology</i>, 101(4).</li>
+      <li id="r8">Amabile, T., &amp; Kramer, S. (2011). <i>The Progress Principle</i>. Harvard Business Review Press.</li>
+      <li id="r9">Harkin, B., et al. (2016). Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence. <i>Psychological Bulletin</i>, 142(2).</li>
+      <li id="r10">Ariely, D., &amp; Wertenbroch, K. (2002). Procrastination, deadlines, and performance: Self-control by precommitment. <i>Psychological Science</i>, 13(3).</li>
+      <li id="r11">Di Stefano, G., Gino, F., Pisano, G., &amp; Staats, B. (2014). Making experience count: The role of reflection in individual learning. <i>Harvard Business School Working Paper</i> 14-093.</li>
+      <li id="r12">Kivetz, R., Urminsky, O., &amp; Zheng, Y. (2006). The goal-gradient hypothesis resurrected. <i>Journal of Marketing Research</i>, 43(1).</li>
+    </ol>
+  </section>
 </article>
 </main>
 
-<footer><a href="/">Home</a><a href="/winter-arc/">Winter Arc</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><br>© 2026 Dear Brain</footer>
+<footer><a href="/">Home</a><a href="/winter-arc/">Winter Arc</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><br><br>© 2026 Dear Brain</footer>
 
 <script>
 (function () {
   var bar = document.getElementById('progress');
-  var links = document.querySelectorAll('.letters a');
-  var order = ['s', 't', 'i', 'c', 'k'];
-  var steps = order.map(function (id) { return document.getElementById(id); });
-
   function onScroll() {
-    var h = document.documentElement;
-    var max = h.scrollHeight - h.clientHeight;
-    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
-    var line = window.innerHeight * 0.4, current = -1;
-    steps.forEach(function (el, i) { if (el.getBoundingClientRect().top < line) current = i; });
-    links.forEach(function (a, i) {
-      a.classList.toggle('on', i === current);
-      a.classList.toggle('done', i < current);
-    });
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? h.scrollTop / max * 100 : 0) + '%';
   }
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
   onScroll();
-
-  var fades = document.querySelectorAll('.fade');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -10% 0px' });
-    fades.forEach(function (el) { io.observe(el); });
-  } else {
-    fades.forEach(function (el) { el.classList.add('in'); });
-  }
 })();
 </script>
 </body>
