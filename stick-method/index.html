@@ -4,109 +4,112 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The STICK Method: 5 Simple Steps to Make a Good Habit Stick</title>
-<meta name="description" content="Five simple, science-backed steps to make one good habit stick this winter, even with a phone built to distract you.">
+<meta name="description" content="19 short idea cards. Five simple, science-backed steps to make one good habit stick this winter, even with a phone built to distract you.">
 <link rel="canonical" href="https://dearbrainapp.com/stick-method/">
 <meta property="og:title" content="The STICK Method: 5 Simple Steps to Make a Good Habit Stick">
-<meta property="og:description" content="Your phone is very good at grabbing your time. Here’s how to grab it back.">
+<meta property="og:description" content="Your phone is very good at grabbing your time. Here’s how to grab it back, in 19 short cards.">
 <meta property="og:image" content="https://dearbrainapp.com/assets/stick/og.jpg">
 <meta property="og:url" content="https://dearbrainapp.com/stick-method/">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#F3EFE9">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
 :root {
   color-scheme: light;
-  --text: #242424;
-  --soft: #6b6b6b;
-  --line: #f2f2f2;
-  --accent: #1a8917;
-  --serif: "Source Serif 4", Charter, "Bitstream Charter", Georgia, Cambria, "Times New Roman", serif;
+  --bg: #F3EFE9;
+  --text: #1d1b26;
+  --soft: #66626f;
+  --navy: #1f2a5c;
+  --peach: #FCE3D3;
+  --peach-ink: #A9461F;
+  --lilac: #E8E4FB;
+  --lilac-ink: #5A4FD6;
   --sans: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fff; color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
-img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; }
+html { -webkit-text-size-adjust: 100%; scroll-snap-type: y mandatory; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
 
 /* Top bar */
-.top { position: sticky; top: 0; z-index: 5; background: #fff; border-bottom: 1px solid var(--line); }
-.top-in { max-width: 1192px; margin: 0 auto; height: 57px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 700 1.25rem var(--serif); letter-spacing: -0.02em; }
+.top { position: fixed; inset: 0 0 auto 0; z-index: 5; background: var(--bg); }
+.top-in { max-width: 480px; margin: 0 auto; height: 56px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
 .brand img { width: 28px; height: 28px; border-radius: 7px; }
-.pill { background: #191919; color: #fff; text-decoration: none; font: 500 .875rem var(--sans); padding: 8px 16px; border-radius: 99px; }
-.progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--text); }
+.count { font-weight: 600; font-size: .85rem; color: var(--soft); font-variant-numeric: tabular-nums; }
+.pill { background: var(--text); color: #fff; text-decoration: none; font-weight: 600; font-size: .85rem; padding: 8px 14px; border-radius: 99px; white-space: nowrap; }
+.bar { height: 3px; background: rgba(0,0,0,.06); }
+.bar i { display: block; height: 100%; width: 0; background: var(--text); transition: width .3s ease; }
 
-/* Article */
-.col { max-width: 728px; margin: 0 auto; padding: 0 24px; }
-header.post { padding-top: 48px; }
-h1 { font: 700 2.625rem/1.24 var(--sans); letter-spacing: -0.016em; margin: 0; }
-.sub { font: 400 1.375rem/1.4 var(--sans); color: var(--soft); margin: 14px 0 0; }
-.byline { display: flex; align-items: center; gap: 12px; margin: 32px 0 0; padding-bottom: 24px; border-bottom: 1px solid var(--line); font-size: .875rem; }
-.byline img { width: 44px; height: 44px; border-radius: 50%; }
-.byline b { font-weight: 500; display: block; }
-.byline span { color: var(--soft); }
+/* Cards */
+.slide { height: 100vh; height: 100svh; padding: 70px 16px 18px; display: flex; justify-content: center; scroll-snap-align: start; scroll-snap-stop: always; }
+.card { width: 100%; max-width: 448px; height: 100%; max-height: 720px; margin: auto 0; background: #fff; border-radius: 26px; box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(31,42,92,.08); overflow: hidden auto; display: flex; flex-direction: column; }
+.card > img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; flex: none; }
+.txt { padding: 22px 22px 18px; display: flex; flex-direction: column; flex: 1; }
+.tag { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin: 0 0 10px; }
+h1, h2 { margin: 0; font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
+h1 { font-size: 2.3rem; }
+h2 { font-size: 1.7rem; }
+.txt p { font-size: 1.1rem; line-height: 1.55; margin: 12px 0 0; }
+.txt p.tag { font-size: .75rem; line-height: 1.3; margin: 0 0 10px; }
+.try { margin-top: auto; padding-top: 16px; }
+.try div { background: var(--bg); border-radius: 14px; padding: 12px 14px; font-size: 1rem; line-height: 1.45; font-weight: 500; }
+.try b { display: block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin-bottom: 2px; }
+.foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(0,0,0,.06); font-size: .8rem; font-weight: 600; color: var(--soft); }
+.try + .foot { margin-top: 16px; }
+.foot span { display: flex; align-items: center; gap: 6px; }
+.foot img { width: 18px; height: 18px; border-radius: 5px; }
 
-figure { margin: 40px 0; }
-figure img { width: 100%; }
-figcaption { font: 400 .875rem/1.4 var(--sans); color: var(--soft); text-align: center; margin-top: 10px; }
+/* Card colours */
+.navy { background: var(--navy); color: #fff; }
+.navy .tag, .navy .foot { color: rgba(255,255,255,.65); }
+.navy .foot { border-color: rgba(255,255,255,.12); }
+.navy .try div { background: rgba(255,255,255,.1); }
+.navy .try b { color: rgba(255,255,255,.65); }
+.peach { background: var(--peach); }
+.peach .tag, .peach .try b { color: var(--peach-ink); }
+.peach .try div { background: rgba(255,255,255,.6); }
+.lilac { background: var(--lilac); }
+.lilac .tag, .lilac .try b { color: var(--lilac-ink); }
+.lilac .try div { background: rgba(255,255,255,.6); }
+.peach .foot, .lilac .foot { border-color: rgba(0,0,0,.08); }
+.center .txt > :first-child { margin-top: auto; }
 
-.body p, .body li { font: 400 1.25rem/1.6 var(--serif); letter-spacing: -0.003em; }
-.body p { margin: 1.6em 0 0; }
-.body h2 + p, .body figure + p, .body .kicker + h2 + p { margin-top: .86em; }
-.body h2 { font: 700 1.5rem/1.25 var(--sans); letter-spacing: -0.016em; margin: 2.2em 0 0; }
-.body .kicker { font: 600 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin: 3.2em 0 0; }
-.body .kicker + h2 { margin-top: .3em; }
-.body ul, .body ol { margin: 1.2em 0 0; padding-left: 1.6em; }
-.body li { margin-top: .5em; padding-left: .2em; }
-.body strong { font-weight: 700; }
-sup a { font: 600 .7rem var(--sans); color: var(--soft); text-decoration: none; padding: 0 1px; }
+.txt p.big { font-size: 5.5rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; margin: 8px 0 0; }
+.txt p.quote { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin: 4px 0 0; }
 
-blockquote { margin: 2.2em 0 0; padding-left: 20px; border-left: 3px solid var(--text); }
-blockquote p { font-style: italic; margin: 0 !important; }
-.body .pull { margin: 2.4em 0 0; font: italic 400 1.75rem/1.4 var(--serif); color: var(--soft); text-align: center; letter-spacing: -0.01em; }
-.body .big-num { font: 700 4rem/1 var(--serif); letter-spacing: -0.03em; margin: 1em 0 0; }
-.body .big-num + p { margin-top: .3em !important; }
-.try { margin: 1.4em 0 0; padding: 18px 22px; background: #f9f9f9; border-radius: 4px; }
-.try p { margin: 0 !important; }
-.try .label { font: 600 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin-bottom: 4px !important; }
-.body .sep { text-align: center; letter-spacing: 1.2em; font: 400 1.5rem var(--serif); color: var(--text); margin: 2.4em 0 0; padding-left: 1.2em; }
+.stick { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 10px; }
+.stick li { display: flex; align-items: center; gap: 14px; font-size: 1.1rem; font-weight: 600; }
+.stick b { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-size: 1.2rem; font-weight: 800; background: var(--lilac); color: var(--lilac-ink); }
+.navy .stick b { background: rgba(255,255,255,.14); color: #fff; }
 
-/* App card */
-.app { margin: 48px 0 0; border: 1px solid #e6e6e6; border-radius: 8px; padding: 24px; display: grid; grid-template-columns: 64px 1fr; gap: 16px 18px; align-items: center; }
-.app img { width: 64px; height: 64px; border-radius: 15px; }
-.app h3 { font: 700 1.125rem/1.3 var(--sans); margin: 0; }
-.app p { font: 400 .95rem/1.45 var(--sans); color: var(--soft); margin: 2px 0 0; }
-.app a { grid-column: 1 / -1; display: block; text-align: center; background: #191919; color: #fff; text-decoration: none; font: 600 1rem var(--sans); padding: 14px; border-radius: 99px; }
-.app small { grid-column: 1 / -1; text-align: center; color: var(--soft); font-size: .8rem; margin-top: -6px; }
+.hint { margin-top: auto; padding-top: 16px; font-weight: 600; font-size: .95rem; color: rgba(255,255,255,.75); display: flex; align-items: center; gap: 8px; }
+.hint i { font-style: normal; display: inline-block; animation: nudge 1.6s ease-in-out infinite; }
+@keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
 
-.refs { margin: 56px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
-.refs h4 { font: 600 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--soft); margin: 0 0 8px; }
-.refs ol { margin: 0; padding-left: 1.4em; }
-.refs li { font: 400 .875rem/1.5 var(--sans); color: var(--soft); margin: 6px 0; }
-.refs li:target { color: var(--text); }
+.app-icon { width: 76px; height: 76px; border-radius: 18px; margin-bottom: 18px; }
+.cta { display: block; text-align: center; background: #fff; color: var(--navy); text-decoration: none; font-weight: 800; font-size: 1.1rem; padding: 16px; border-radius: 99px; margin-top: 22px; }
+.txt p.fine { text-align: center; font-size: .85rem; color: rgba(255,255,255,.65); margin-top: 10px; }
+.links { text-align: center; font-size: .8rem; margin-top: auto; padding-top: 18px; }
+.links a { color: rgba(255,255,255,.6); margin: 0 6px; }
 
-footer { margin-top: 64px; padding: 32px 24px 48px; border-top: 1px solid var(--line); text-align: center; font-size: .875rem; color: var(--soft); }
-footer a { margin: 0 8px; color: var(--soft); }
-
-@media (max-width: 728px) {
-  .top-in { padding: 0 16px; }
-  .col { padding: 0 20px; }
-  header.post { padding-top: 32px; }
-  h1 { font-size: 2rem; line-height: 1.25; }
-  .sub { font-size: 1.2rem; }
-  .body p, .body li { font-size: 1.125rem; line-height: 1.58; }
-  .body h2 { font-size: 1.375rem; }
-  .body .pull { font-size: 1.45rem; }
-  .body .big-num { font-size: 3.2rem; }
-  figure.wide { margin-left: -20px; margin-right: -20px; }
-  figure.wide figcaption { padding: 0 20px; }
+/* Short phones: tighter type so each card fits */
+@media (max-height: 740px) {
+  .slide { padding-top: 64px; padding-bottom: 12px; }
+  .txt { padding: 18px 18px 14px; }
+  h1 { font-size: 2rem; } h2 { font-size: 1.45rem; }
+  .txt p { font-size: 1rem; line-height: 1.5; margin-top: 10px; }
+  .card > img { aspect-ratio: 16 / 9; }
+  .txt p.big { font-size: 4.5rem; } .txt p.quote { font-size: 2.2rem; }
+  .stick li { font-size: 1rem; } .stick b { width: 34px; height: 34px; }
+  .foot { padding-top: 10px; }
 }
+@media (prefers-reduced-motion: reduce) { .hint i { animation: none; } }
 </style>
 </head>
 <body>
@@ -114,209 +117,244 @@ footer a { margin: 0 8px; color: var(--soft); }
 <nav class="top">
   <div class="top-in">
     <a class="brand" href="/"><img src="/assets/apple-touch-icon.png" alt="">Dear Brain</a>
+    <span class="count" id="count" aria-live="polite">1 / 19</span>
     <a class="pill" href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121">Get the app</a>
   </div>
-  <div class="progress" id="progress"></div>
+  <div class="bar"><i id="bar"></i></div>
 </nav>
 
-<main class="col">
-<article>
-  <header class="post">
-    <h1>The STICK Method: 5 Simple Steps to Make a Good Habit Stick</h1>
-    <p class="sub">Your phone is very good at grabbing your time. Here’s how to grab it back.</p>
-    <div class="byline">
-      <img src="/assets/apple-touch-icon.png" alt="">
-      <div><b>Dear Brain</b><span>4 min read · Oct 31, 2026</span></div>
+<main>
+
+  <section class="slide"><article class="card navy">
+    <img src="/assets/stick/hero.webp" alt="A person reading by a snowy window, phone face down on the table" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Winter Arc · 19 cards · 3 min</p>
+      <h1>The STICK Method</h1>
+      <p>5 simple steps to make a good habit stick, even with a phone that wants all your time.</p>
+      <div class="hint">Scroll to start <i>↓</i></div>
     </div>
-  </header>
+  </article></section>
 
-  <figure class="wide">
-    <img src="/assets/stick/hero.webp" alt="A person reading in an armchair by a snowy window, phone face down on the table" width="1400" height="933">
-  </figure>
-
-  <div class="body">
-    <p>It’s late at night. You wanted to read your book. But you picked up your phone “just for a minute.” Now an hour is gone.</p>
-
-    <p>This happens to everyone. <strong>And it’s not because you’re lazy.</strong></p>
-
-    <p>Your phone is built to grab you. Each time you scroll, you <em>might</em> see something fun. Or you might not. Not knowing is what keeps you scrolling. A slot machine uses the same trick.</p>
-
-    <p>So here’s the plan. We won’t fight the phone with willpower. We’ll borrow its tricks and use them for a good habit.</p>
-
-    <p>We call it <strong>STICK</strong>. Five steps. Each one is backed by science. One step is a single sentence that helped almost three times more people stick to exercise. Another is the step most people skip.</p>
-
-    <p class="kicker">Step 1</p>
-    <h2>S — Select one small habit</h2>
-    <figure>
-      <img loading="lazy" src="/assets/stick/select.webp" alt="One seedling growing in a pot beside a row of empty pots on a frosty windowsill" width="1400" height="933">
-      <figcaption>Start with one seed. Not ten.</figcaption>
-    </figure>
-    <p>Don’t start five habits. Start one. And make it small. So small it feels a bit too easy.</p>
-
-    <p>Why? Because feeling like doing something goes up and down. Some days you feel great. Some days you don’t. A tiny habit still happens on a bad day.<sup><a href="#r1">1</a></sup></p>
-
-    <p>Scientists in London watched people build new habits. Easy ones, like drinking a glass of water, turned automatic faster than hard ones, like doing 50 sit-ups.<sup><a href="#r2">2</a></sup></p>
-
-    <div class="try">
-      <p class="label">Try this</p>
-      <p>Pick one habit. Make it small. “Read 10 pages,” not “read more.”</p>
+  <section class="slide"><article class="card peach center">
+    <div class="txt">
+      <p class="tag">The problem</p>
+      <h2>It’s not because you’re lazy</h2>
+      <p>You wanted to read your book. You picked up your phone “just for a minute.” Now an hour is gone.</p>
+      <p>This happens to everyone. And there’s a reason.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>2</span></div>
     </div>
+  </article></section>
 
-    <p class="kicker">Step 2</p>
-    <h2>T — Time it</h2>
-    <figure>
-      <img loading="lazy" src="/assets/stick/timelock.webp" alt="A clock at seven above a bench with running shoes waiting by the door" width="1400" height="933">
-      <figcaption>The shoes are ready. The clock says go.</figcaption>
-    </figure>
-    <p>“I’ll do it later” almost never happens. Later isn’t a time.</p>
-
-    <p>Scientists once asked a group of people to exercise more. Some of them also wrote one sentence: <em>when</em> and <em>where</em> they would exercise.</p>
-
-    <p class="big-num">91%</p>
-    <p>of the people who wrote that sentence exercised. Of everyone else, only about 1 in 3 did.<sup><a href="#r3">3</a></sup></p>
-
-    <p>That’s the power of a plan with a time and a place. Scientists have tested this idea in almost 100 studies, and it works again and again.<sup><a href="#r4">4</a></sup></p>
-
-    <p>Here’s why. Lots of what we do each day happens at the same time and place, almost on autopilot.<sup><a href="#r5">5</a></sup> Give your habit a set time, and the time itself reminds you.</p>
-
-    <p>One more thing. Just having your phone on the table makes it harder to think, even when it’s face down.<sup><a href="#r6">6</a></sup> So during your habit time, put it away.</p>
-
-    <div class="try">
-      <p class="label">Try this</p>
-      <p>Fill in the blanks: <strong>“At [time], in [place], I will [habit].”</strong> Then put your phone in another room for that time.</p>
+  <section class="slide"><article class="card">
+    <img loading="lazy" src="/assets/stick/slot.webp" alt="A phone drawn as a slot machine" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Why it happens</p>
+      <h2>Your phone works like a slot machine</h2>
+      <p>Each time you scroll, you <em>might</em> see something fun. Or you might not. Not knowing is exactly what keeps you scrolling.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>3</span></div>
     </div>
+  </article></section>
 
-    <p class="kicker">Step 3</p>
-    <h2>I — Itemize it into a tiny to-do list</h2>
-    <figure>
-      <img loading="lazy" src="/assets/stick/itemize.webp" alt="A short checklist with two items ticked, a pencil and a cup of tea on a desk" width="1400" height="933">
-      <figcaption>Two ticks done. The last one feels easy.</figcaption>
-    </figure>
-    <p>“Write in my journal” is fuzzy. Your brain doesn’t know where to start.</p>
-
-    <p>“Open the notebook. Write the date. Write three lines.” Now your brain knows exactly what to do.</p>
-
-    <p>When a goal is unfinished, your mind keeps poking you about it. Scientists found that making a clear plan makes the poking stop.<sup><a href="#r7">7</a></sup></p>
-
-    <p>And ticking a box feels good. Researchers read about 12,000 diary entries from people at work. What made them happiest? Making progress, even a little bit.<sup><a href="#r8">8</a></sup></p>
-
-    <div class="try">
-      <p class="label">Try this</p>
-      <p>Break your habit into 3 or 4 small steps. Make the first one super easy, like “put on your shoes.”</p>
+  <section class="slide"><article class="card navy center">
+    <div class="txt">
+      <p class="tag">The plan</p>
+      <h2>Don’t fight your phone. Borrow its tricks.</h2>
+      <ul class="stick">
+        <li><b>S</b>Select one small habit</li>
+        <li><b>T</b>Time it</li>
+        <li><b>I</b>Itemize it into a tiny list</li>
+        <li><b>C</b>Capture proof</li>
+        <li><b>K</b>Keep a record</li>
+      </ul>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>4</span></div>
     </div>
+  </article></section>
 
-    <p class="pull">“The hardest part is starting. So make the start easy.”</p>
-
-    <p class="kicker">Step 4</p>
-    <h2>C — Capture proof</h2>
-    <figure>
-      <img loading="lazy" src="/assets/stick/proof.webp" alt="Hands taking a phone photo of an open notebook next to a cup of coffee" width="1400" height="933">
-      <figcaption>Done isn’t a feeling. Done is a photo.</figcaption>
-    </figure>
-    <p>This is the step most people skip.</p>
-
-    <p>Our brains are too nice to us. We say, “I kind of did it.” Then one day we stop, and we don’t even notice.</p>
-
-    <p>Scientists looked at 138 studies. Keeping track of your progress helped people reach their goals. It helped even more when people wrote it down or showed it to someone.<sup><a href="#r9">9</a></sup></p>
-
-    <p>People also do better when they set a rule for themselves ahead of time.<sup><a href="#r10">10</a></sup> So decide today what your proof will be. Then you can’t trick yourself tomorrow.</p>
-
-    <div class="try">
-      <p class="label">Try this</p>
-      <p>Choose your proof photo. The open book. The muddy shoes. The clean kitchen. No photo? Not done.</p>
+  <section class="slide"><article class="card">
+    <img loading="lazy" src="/assets/stick/select.webp" alt="One seedling growing among empty pots" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Step 1 · S</p>
+      <h2>Select one small habit</h2>
+      <p>Not five. Just one. Make it so small it feels a bit too easy.</p>
+      <p>Feeling like doing something goes up and down. A tiny habit still happens on a bad day.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>5</span></div>
     </div>
+  </article></section>
 
-    <p class="kicker">Step 5</p>
-    <h2>K — Keep a record</h2>
-    <figure>
-      <img loading="lazy" src="/assets/stick/record.webp" alt="A wall calendar with a long chain of days marked off, snow falling outside the window" width="1400" height="933">
-      <figcaption>The longer the chain, the less you want to break it.</figcaption>
-    </figure>
-    <p>Two small things. Write one line about what you did. Then mark the day on a calendar.</p>
-
-    <p>Writing one line helps more than you’d think. New workers who spent 15 minutes at the end of each day writing about what they learned did 23% better on a test.<sup><a href="#r11">11</a></sup></p>
-
-    <p>Marking the calendar helps too. Think of a coffee card: buy 10, get one free. People bought coffee faster as they got closer to the free one.<sup><a href="#r12">12</a></sup> Your calendar works the same way. The more days you mark, the more you want to keep going.</p>
-
-    <p>And here’s the good news. Missing one day doesn’t ruin a habit.<sup><a href="#r2">2</a></sup> Just follow one rule:</p>
-
-    <blockquote><p>Never miss two days in a row.</p></blockquote>
-
-    <div class="try">
-      <p class="label">Try this</p>
-      <p>Write one line: What did I do? How did it feel? Then mark today.</p>
+  <section class="slide"><article class="card lilac center">
+    <div class="txt">
+      <p class="tag">Step 1 · S</p>
+      <h2>Easy habits stick faster</h2>
+      <p>Scientists watched people build new habits. Drinking a glass of water became automatic faster than doing 50 sit-ups.</p>
+      <div class="try"><div><b>Try this</b>“Read 10 pages,” not “read more.”</div></div>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>6</span></div>
     </div>
+  </article></section>
 
-    <p class="sep">···</p>
-
-    <h2>Why winter is the perfect time</h2>
-    <figure>
-      <img loading="lazy" src="/assets/stick/curve.webp" alt="A person with a lantern walking up a steep snowy path toward a warm cabin at the top" width="1400" height="933">
-      <figcaption>The start is the steep part. Then it gets easier.</figcaption>
-    </figure>
-    <p>Habits take time. In the London study, it took about 66 days for a new habit to feel automatic.<sup><a href="#r2">2</a></sup> But the first few weeks count the most. That’s when a habit grows fastest.</p>
-
-    <p>Winter nights are long and dark. It’s easy to curl up with your phone. That’s exactly why winter is the best time to start. Begin now, and by the new year your habit will already be running.</p>
-
-    <p>Here are the five steps again:</p>
-    <ol>
-      <li><strong>Select</strong> one small habit.</li>
-      <li><strong>Time</strong> it: pick a time and a place.</li>
-      <li><strong>Itemize</strong> it into a tiny to-do list.</li>
-      <li><strong>Capture</strong> a photo as proof.</li>
-      <li><strong>Keep</strong> a record: one line, one mark.</li>
-    </ol>
-
-    <p>You can do all of this with a notebook, an alarm, a timer, your camera and a paper calendar. That works.</p>
-
-    <p>But that’s five things to juggle. So we put all five steps into one app: <strong>Dear Brain</strong>.</p>
-
-    <p>You pick a habit and give it a time. When that time comes, apps like TikTok and Instagram lock until you’re done. A timer walks you through each step. You snap a photo as proof. Then you write a line, and your calendar fills up.</p>
-
-    <p>It’s free to try. Pick one small habit and start tonight.</p>
-  </div>
-
-  <div class="app">
-    <img src="/assets/v10/icon-128.webp" alt="Dear Brain app icon" width="64" height="64">
-    <div>
-      <h3>Dear Brain</h3>
-      <p>Good habits first. Scrolling later.</p>
+  <section class="slide"><article class="card">
+    <img loading="lazy" src="/assets/stick/timelock.webp" alt="A clock at seven above running shoes by the door" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Step 2 · T</p>
+      <h2>Time it</h2>
+      <p>“I’ll do it later” almost never happens. Later isn’t a time.</p>
+      <p>Give your habit a set time, and the time itself reminds you.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>7</span></div>
     </div>
-    <a href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121">Get the app — it’s free</a>
-    <small>For iPhone · No ads, no tracking</small>
-  </div>
+  </article></section>
 
-  <section class="refs">
-    <h4>References</h4>
-    <ol>
-      <li id="r1">Fogg, B. J. (2009). A behavior model for persuasive design. <i>Proceedings of Persuasive Technology</i>.</li>
-      <li id="r2">Lally, P., van Jaarsveld, C., Potts, H., &amp; Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. <i>European Journal of Social Psychology</i>, 40(6).</li>
-      <li id="r3">Milne, S., Orbell, S., &amp; Sheeran, P. (2002). Combining motivational and volitional interventions to promote exercise participation. <i>British Journal of Health Psychology</i>, 7(2).</li>
-      <li id="r4">Gollwitzer, P. M., &amp; Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis. <i>Advances in Experimental Social Psychology</i>, 38.</li>
-      <li id="r5">Wood, W., Quinn, J. M., &amp; Kashy, D. A. (2002). Habits in everyday life. <i>Journal of Personality and Social Psychology</i>, 83(6).</li>
-      <li id="r6">Ward, A. F., Duke, K., Gneezy, A., &amp; Bos, M. W. (2017). Brain drain: The mere presence of one’s own smartphone reduces available cognitive capacity. <i>Journal of the Association for Consumer Research</i>, 2(2).</li>
-      <li id="r7">Masicampo, E. J., &amp; Baumeister, R. F. (2011). Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals. <i>Journal of Personality and Social Psychology</i>, 101(4).</li>
-      <li id="r8">Amabile, T., &amp; Kramer, S. (2011). <i>The Progress Principle</i>. Harvard Business Review Press.</li>
-      <li id="r9">Harkin, B., et al. (2016). Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence. <i>Psychological Bulletin</i>, 142(2).</li>
-      <li id="r10">Ariely, D., &amp; Wertenbroch, K. (2002). Procrastination, deadlines, and performance: Self-control by precommitment. <i>Psychological Science</i>, 13(3).</li>
-      <li id="r11">Di Stefano, G., Gino, F., Pisano, G., &amp; Staats, B. (2014). Making experience count: The role of reflection in individual learning. <i>Harvard Business School Working Paper</i> 14-093.</li>
-      <li id="r12">Kivetz, R., Urminsky, O., &amp; Zheng, Y. (2006). The goal-gradient hypothesis resurrected. <i>Journal of Marketing Research</i>, 43(1).</li>
-    </ol>
-  </section>
-</article>
+  <section class="slide"><article class="card navy center">
+    <div class="txt">
+      <p class="tag">Step 2 · T</p>
+      <p class="big">91%</p>
+      <p>In one study, people who wrote down <em>when</em> and <em>where</em> they would exercise actually did it 91% of the time.</p>
+      <p>Everyone else? About 1 in 3.</p>
+      <div class="try"><div><b>Try this</b>“At [time], in [place], I will [habit].”</div></div>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>8</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card">
+    <img loading="lazy" src="/assets/stick/drain.webp" alt="A phone face down on a desk, mist drifting over an open book" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Step 2 · T</p>
+      <h2>Your phone drains your brain</h2>
+      <p>Just having your phone on the table makes it harder to think, even when it’s face down.</p>
+      <p>During your habit time, put it in another room.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>9</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card">
+    <img loading="lazy" src="/assets/stick/itemize.webp" alt="A short checklist with two items ticked" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Step 3 · I</p>
+      <h2>Itemize it into a tiny list</h2>
+      <p>“Write in my journal” is fuzzy. Your brain doesn’t know where to start.</p>
+      <p>“Open the notebook. Write the date. Write three lines.” Now it knows exactly what to do.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>10</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card peach center">
+    <div class="txt">
+      <p class="tag">Step 3 · I</p>
+      <h2>Small wins feel big</h2>
+      <p>Ticking a box feels good. Researchers found that making progress, even a tiny bit, is what makes people happiest at work.</p>
+      <div class="try"><div><b>Try this</b>Make your first step super easy, like “put on your shoes.”</div></div>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>11</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card">
+    <img loading="lazy" src="/assets/stick/proof.webp" alt="Hands taking a photo of an open notebook" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Step 4 · C</p>
+      <h2>Capture proof</h2>
+      <p>This is the step most people skip.</p>
+      <p>Our brains are too nice to us. We say “I kind of did it.” Then one day we stop, and we don’t even notice.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>12</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card lilac center">
+    <div class="txt">
+      <p class="tag">Step 4 · C</p>
+      <h2>Done is a photo, not a feeling</h2>
+      <p>People reach their goals more often when they track their progress. Even more when they write it down or show someone.</p>
+      <div class="try"><div><b>Try this</b>Pick your proof photo today. The open book. The muddy shoes. No photo? Not done.</div></div>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>13</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card">
+    <img loading="lazy" src="/assets/stick/record.webp" alt="A wall calendar with a long chain of days marked" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Step 5 · K</p>
+      <h2>Keep a record</h2>
+      <p>Write one line about what you did. Then mark the day.</p>
+      <p>Workers who wrote for 15 minutes about their day did 23% better on a test.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>14</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card peach center">
+    <div class="txt">
+      <p class="tag">Step 5 · K</p>
+      <h2>The coffee card trick</h2>
+      <p>Buy 10 coffees, get one free. People buy faster as they get close to the free one.</p>
+      <p>Your calendar works the same way. The more days you mark, the more you want to keep going.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>15</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card navy center">
+    <div class="txt">
+      <p class="tag">Step 5 · K</p>
+      <p class="quote">Never miss twice.</p>
+      <p>Missing one day doesn’t ruin a habit. Missing two in a row is where it starts to slip.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>16</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card">
+    <img loading="lazy" src="/assets/stick/curve.webp" alt="A person with a lantern climbing a snowy path to a warm cabin" width="1400" height="933">
+    <div class="txt">
+      <p class="tag">Why winter</p>
+      <h2>The start is the steep part</h2>
+      <p>A new habit takes about 66 days to feel automatic. But the first few weeks count the most.</p>
+      <p>Start this winter, and by the new year your habit will already be running.</p>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>17</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card center">
+    <div class="txt">
+      <p class="tag">Save this</p>
+      <h2>Your STICK cheat sheet</h2>
+      <ul class="stick">
+        <li><b>S</b>Pick one small habit</li>
+        <li><b>T</b>Give it a time and place</li>
+        <li><b>I</b>Make a tiny to-do list</li>
+        <li><b>C</b>Snap a photo as proof</li>
+        <li><b>K</b>Write one line, mark the day</li>
+      </ul>
+      <div class="foot"><span><img src="/assets/apple-touch-icon.png" alt="">The STICK Method</span><span>18</span></div>
+    </div>
+  </article></section>
+
+  <section class="slide"><article class="card navy center">
+    <div class="txt">
+      <img class="app-icon" src="/assets/v10/icon-256.webp" alt="Dear Brain app icon" width="76" height="76">
+      <p class="tag">One more thing</p>
+      <h2>We put all 5 steps in one app</h2>
+      <p>Dear Brain gives your habit a time, locks TikTok and Instagram until it’s done, walks you through each step, checks your proof photo, and fills in your calendar.</p>
+      <a class="cta" href="https://apps.apple.com/us/app/dearbrain-earn-screen-time/id6816478121">Get the app — it’s free</a>
+      <p class="fine">For iPhone · No ads, no tracking</p>
+      <div class="links"><a href="/">Home</a><a href="/winter-arc/">Winter Arc</a><a href="/privacy/">Privacy</a></div>
+    </div>
+  </article></section>
+
 </main>
-
-<footer><a href="/">Home</a><a href="/winter-arc/">Winter Arc</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a><br><br>© 2026 Dear Brain</footer>
 
 <script>
 (function () {
-  var bar = document.getElementById('progress');
-  function onScroll() {
-    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
-    bar.style.width = (max > 0 ? h.scrollTop / max * 100 : 0) + '%';
+  var slides = document.querySelectorAll('.slide');
+  var count = document.getElementById('count');
+  var bar = document.getElementById('bar');
+  var total = slides.length;
+  function show(i) {
+    count.textContent = (i + 1) + ' / ' + total;
+    bar.style.width = ((i + 1) / total * 100) + '%';
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) show(Array.prototype.indexOf.call(slides, e.target));
+      });
+    }, { threshold: 0.6 });
+    slides.forEach(function (s) { io.observe(s); });
+  }
+  show(0);
 })();
 </script>
 </body>
